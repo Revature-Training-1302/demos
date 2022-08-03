@@ -1,3 +1,5 @@
+package Tuesday;
+
 // Class names are capitalized
 // example: String is a class, so it is capitalized
 public class HelloWorld {
