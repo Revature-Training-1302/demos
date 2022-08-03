@@ -1,5 +1,7 @@
 package Wednesday;
 
+import java.util.Scanner;
+
 public class FlowControl {
     public static void main(String [] args) {
         // we have to be 60 inches or taller to ride the roller coaster
@@ -51,7 +53,7 @@ public class FlowControl {
 
         int counter = 1;
         // while our counter is less than 11:
-        while(counter < 11) {
+        while(counter < 101) {
             // loop body, this is what executes at every iteration
             // in this case, we print out counter at every step:
             System.out.println(counter);
@@ -62,6 +64,65 @@ public class FlowControl {
             // this is the shortest way to increment a variable, just keep in mind that it adds exactly 1
             counter ++;
         }
+
+        // While loops don't have to be numeric, they can rely on user input, etc.
+        Scanner scanner = new Scanner(System.in);
+        boolean flag = false;
+        // loop while the boolean variable flag is true
+        while(flag) {
+            System.out.println("Enter an animal");
+            String animal = scanner.nextLine();
+            System.out.println(animal);
+            // checking to see if the animal we pass in is an aardvark
+            // contains checks if the first string contains the second string inside
+            if(animal.contains("aardvark")) {
+                // if so, we set the flag to be false which will then break the loop
+                flag = false;
+            }
+        }
+        System.out.println("Congratulations! \nYou guessed the correct animal!");
+
+
+        System.out.println("For Loop: ");
+        // if we have a numeric loop, it's easier to write it as a for-loop:
+        for(int i = 0; i < 20; i ++) {
+            // loop body, this will execute every time
+            System.out.println(i);
+        }
+
+        // special loop statements
+        for(int i = 0; i < 10; i ++) {
+            // loop body, this happens with every iteration
+            if(i % 2 == 0) {
+                System.out.println("Even!");
+                // continue means skip the rest of this iteration and move on to the next
+                 continue;
+            }
+            // if we reach this code, that means we didn't "continue", so this will print out just the odd numbers
+            System.out.println(i);
+        }
+
+        // break:
+        for(int i = 0; i < 20; i ++) {
+            // if we encounter an unlucky number, cut our losses and quit the loop entirely
+            if (i == 13) {
+                // break will exit the loop entirely, not just skip the next iteration
+                break;
+            }
+            System.out.println(i);
+        }
+
+        // nested for loops:
+//        for(int i = 0; i < 10; i ++) {
+//            // we have to use a different counter for the inner loop
+//            for(int j = 0; j < 10; j ++) {
+//                System.out.println("i " + i + " j " + j);
+//                if(j == 7) {
+//                    // only breaks the current loop:
+//                    break;
+//                }
+//            }
+//        }
 
 
     }
