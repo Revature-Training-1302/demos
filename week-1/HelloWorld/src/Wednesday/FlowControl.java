@@ -113,16 +113,16 @@ public class FlowControl {
         }
 
         // nested for loops:
-//        for(int i = 0; i < 10; i ++) {
-//            // we have to use a different counter for the inner loop
-//            for(int j = 0; j < 10; j ++) {
-//                System.out.println("i " + i + " j " + j);
-//                if(j == 7) {
-//                    // only breaks the current loop:
-//                    break;
-//                }
-//            }
-//        }
+        for(int i = 0; i < 10; i ++) {
+            // we have to use a different counter for the inner loop
+            for(int j = 0; j < 10; j ++) {
+                System.out.println("i " + i + " j " + j);
+                if(j == 7) {
+                    // only breaks the current loop:
+                    break;
+                }
+            }
+        }
 
 
     }

@@ -17,7 +17,7 @@ public class FlowControl2 {
             }
             // otherwise, move on with this person because they can ride the ride
             System.out.println("Enjoy your ride!");
-
         }
+
     }
 }
