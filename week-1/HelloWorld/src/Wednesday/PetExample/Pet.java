@@ -2,7 +2,7 @@ package Wednesday.PetExample;
 
 // This class represents a Pet
 // This is a representation of a physical being
-public class Pet {
+public class Pet{
     // define some variables, properties, traits
     int eyes;
     int legs;
