@@ -34,6 +34,7 @@ public class Main {
         // DOGS:
         Dog dog = new Dog("German Shepard", 42.4);
         System.out.println(dog.toString());
+        dog.speak();
 
         // can't use this mammal-only method on an Animal object:
         // shark.mammal_only();

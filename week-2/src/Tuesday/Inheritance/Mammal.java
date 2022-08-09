@@ -28,6 +28,11 @@ public class Mammal extends Animal{
         System.out.println("The mammal says: " + this.sound);
     }
 
+    @Override
+    public void speak(String message) {
+        System.out.println(message);
+    }
+
     // Extending the functionality by adding a method (Animals won't have access to this method)
     public void mammal_only() {
         System.out.println("This method only applies mammals");

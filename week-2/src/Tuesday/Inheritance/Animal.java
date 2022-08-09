@@ -33,6 +33,10 @@ public class Animal {
         System.out.println("The animal says: " + this.sound);
     }
 
+    public void speak(String message) {
+        System.out.println(message);
+    }
+
     public void speak_specific() {
         System.out.println("The " + this.species + " says " + this.sound);
     }

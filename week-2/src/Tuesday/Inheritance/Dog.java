@@ -12,6 +12,11 @@ public class Dog extends Mammal{
 
     }
 
+//    @Override
+    public void speak() {
+        System.out.println("The dog says: " + this.sound);
+    }
+
     @Override
     public String toString() {
         return "Dog{" +
