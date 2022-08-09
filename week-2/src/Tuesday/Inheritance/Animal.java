@@ -10,17 +10,21 @@ public class Animal {
     String species;
     String sound;
 
-    public Animal(double weight, int eyes, int legs, String species, String sound) {
+    boolean warmBlooded;
+
+    public Animal(double weight, int eyes, int legs, String species, String sound, boolean warmBlooded) {
+
         this.weight = weight;
         this.eyes = eyes;
         this.legs = legs;
         this.species = species;
         this.sound = sound;
+        this.warmBlooded = warmBlooded;
     }
 
     // empty constructor:
     public Animal() {
-
+        this.species = "undefined";
     }
 
     // method

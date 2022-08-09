@@ -1,4 +1,4 @@
 package Tuesday.Inheritance;
 
-public class Cat {
+public class Cat extends Mammal{
 }
