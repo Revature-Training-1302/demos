@@ -41,5 +41,7 @@ public class Main {
 
         // Challenge: Let the user make the animal using Scanner
 
+        Dog.knowledge();
+
     }
 }

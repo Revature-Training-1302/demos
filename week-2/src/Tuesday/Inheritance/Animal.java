@@ -41,6 +41,10 @@ public class Animal {
         System.out.println("The " + this.species + " says " + this.sound);
     }
 
+    public static void knowledge() {
+        System.out.println("This is animal class");
+    }
+
 
 
 }
