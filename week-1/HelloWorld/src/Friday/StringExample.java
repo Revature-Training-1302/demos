@@ -49,7 +49,7 @@ public class StringExample {
         String sentence = "Batman is fighting joker";
         // split up the string based on spaces
         String[] words = sentence.split("t");
-        // for each loop, print out everything in an array
+        // enhanced for loop, print out everything in an array
         for(String word: words) {
             System.out.println(word);
             // does not affect
@@ -69,6 +69,8 @@ public class StringExample {
         System.out.println(fruit);
         // trim get rid of white spaces (newlines, spaces, tabs)
         System.out.println(fruit.trim());
+
+        System.out.println(words[100]);
 
 
 
