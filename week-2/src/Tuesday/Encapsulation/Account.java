@@ -42,7 +42,7 @@ public class Account {
     public void setBalance(int balance) {
         // perform some logic to make sure our account stays "valid"
         if(balance > 1000) {
-            System.out.println("Too much money, please uprade you account.");
+            System.out.println("Too much money, please upgrade you account.");
             // leave the method
             return;
         }
