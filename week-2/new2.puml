@@ -1,0 +1,35 @@
+@startuml
+class Tuesday.Inheritance.Main {
++ {static} void main(String[])
+}
+class Tuesday.Inheritance.Dog {
+~ String breed
++ void speak()
++ String toString()
+}
+class Tuesday.Inheritance.Mammal {
+~ int litterSize
++ void speak()
++ void speak(String)
++ void mammal_only()
+}
+class Tuesday.Inheritance.Animal {
+~ double weight
+~ int eyes
+~ int legs
+~ String species
+~ String sound
+~ boolean warmBlooded
++ void speak()
++ void speak(String)
++ void speak_specific()
++ {static} void knowledge()
+}
+class Tuesday.Inheritance.Cat {
+}
+
+
+Tuesday.Inheritance.Mammal <|-- Tuesday.Inheritance.Dog
+Tuesday.Inheritance.Animal <|-- Tuesday.Inheritance.Mammal
+Tuesday.Inheritance.Mammal <|-- Tuesday.Inheritance.Cat
+@enduml

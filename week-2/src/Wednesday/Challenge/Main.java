@@ -4,27 +4,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        String FIRST = in.nextLine();
-        String SECOND = in.nextLine();
-        String answer = "";
-
-        // Write an answer using System.out.println()
-        // To debug: System.err.println("Debug messages...");
-
-        for(int i = 0; i < FIRST.length(); i++){
-            answer += FIRST.charAt(i);
-            System.out.println(answer);
+        String rev = reverse("Federer is the all time tennis champion");
+        System.out.print(rev);
+    }
+    public static String reverse(String x) {
+        char [] letters = new char [x.length()];
+        int index = 0;
+        for(int i = x.length() - 1; i >= 0; i--) {
+            letters[index] = x.charAt(i);
+            index++;
         }
-
-        for(int i = answer.length(); i < SECOND.length(); i++){
-            answer += SECOND.charAt((i));
-            System.out.println(answer);
+        String reverse = "";
+        for(int i = 0; i < x.length(); i++){
+            reverse = reverse + letters[i];
         }
-
-        System.out.println("answer: " + answer);
-
-
-
+        return reverse;
     }
 }
