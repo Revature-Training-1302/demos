@@ -1,0 +1,35 @@
+@startuml
+interface Thursday.Abstraction.InterfaceExample.InterfaceA {
++ void method1()
+}
+class Thursday.Abstraction.InterfaceExample.ClassA {
+}
+interface Thursday.Abstraction.InterfaceExample.LandAnimal {
++ void walk()
++ void run()
+}
+class Thursday.Abstraction.InterfaceExample.Main {
++ {static} void main(String[])
+}
+class Thursday.Abstraction.InterfaceExample.Frog {
++ void walk()
++ void run()
++ void swim()
+}
+interface Thursday.Abstraction.InterfaceExample.WaterAnimal {
++ void swim()
++ void something()
+}
+class Thursday.Abstraction.InterfaceExample.Fish {
++ void swim()
+}
+interface Thursday.Abstraction.InterfaceExample.InterfaceB {
++ void method2()
+}
+
+
+Thursday.Abstraction.InterfaceExample.WaterAnimal <|.. Thursday.Abstraction.InterfaceExample.Frog
+Thursday.Abstraction.InterfaceExample.LandAnimal <|.. Thursday.Abstraction.InterfaceExample.Frog
+Thursday.Abstraction.InterfaceExample.WaterAnimal <|.. Thursday.Abstraction.InterfaceExample.Fish
+Thursday.Abstraction.InterfaceExample.InterfaceA <|-- Thursday.Abstraction.InterfaceExample.InterfaceB
+@enduml
