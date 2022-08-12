@@ -1,7 +1,7 @@
 package Thursday.Abstraction.InterfaceExample;
 
 public interface WaterAnimal {
-    public void swim();
+    void swim();
 
 
     // default keyword lets us implement the method
