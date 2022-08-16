@@ -1,7 +1,7 @@
 package Thursday;
 
 public class ObjectExample {
-    public static void main(String [] args) {
+    public static void main(String args []) {
         Movie movie1 = new Movie("Jurassic Park", "Spielberg", 1993);
         Movie movie2 = new Movie("Titanic", "Cameron", 1997);
         Movie movie3 = new Movie("Hook", 1991);

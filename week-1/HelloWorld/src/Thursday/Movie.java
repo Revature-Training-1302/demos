@@ -40,28 +40,28 @@ public class Movie {
     }
 
     // override the .equals method to make sure that we are checking for value rather than reference
-    @Override
-    public boolean equals(Object obj) {
-        // the way we can check for equality is almost counter-intuitive
-        // where we check different things, and return false if they're different
-        // if we make it all the way to the end, we return true
-
-        // Before we check the values, we notice that we take in a generic Object, rather than a movie
-        // so we have to do some checks to make sure that we're actually checking the right type of object
-        // if we're not even comparing to a movie, there's no way they could be equal:
-        if(!(obj instanceof Movie)) return false;
-        // if we've made it here, that means we haven't return false and obj is an instance of movie
-        // So, we have to cast it to a Movie object so we can access its variables
-        Movie other = (Movie) obj;
-        // now that we've casted the object to a movie object, we can check the parameters
-        if(!this.name.equals(other.name)) return false;
-        if(!this.director.equals(other.director)) return false;
-        // since ints are primitve, we can use the reference comparison:
-        if(this.year != other.year) return false;
-
-        // if we've made it all the way to the bottom of the method, that means we haven't returned false so we can return true:
-        return true;
-    }
+//    @Override
+//    public boolean equals(Object obj) {
+//        // the way we can check for equality is almost counter-intuitive
+//        // where we check different things, and return false if they're different
+//        // if we make it all the way to the end, we return true
+//
+//        // Before we check the values, we notice that we take in a generic Object, rather than a movie
+//        // so we have to do some checks to make sure that we're actually checking the right type of object
+//        // if we're not even comparing to a movie, there's no way they could be equal:
+//        if(!(obj instanceof Movie)) return false;
+//        // if we've made it here, that means we haven't return false and obj is an instance of movie
+//        // So, we have to cast it to a Movie object so we can access its variables
+//        Movie other = (Movie) obj;
+//        // now that we've casted the object to a movie object, we can check the parameters
+//        if(!this.name.equals(other.name)) return false;
+//        if(!this.director.equals(other.director)) return false;
+//        // since ints are primitve, we can use the reference comparison:
+//        if(this.year != other.year) return false;
+//
+//        // if we've made it all the way to the bottom of the method, that means we haven't returned false so we can return true:
+//        return true;
+//    }
 
     @Override
     public int hashCode() {

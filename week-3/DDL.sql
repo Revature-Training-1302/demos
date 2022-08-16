@@ -18,8 +18,17 @@ alter table pet add column dumb_column integer;
 alter table pet drop column dumb_column ;
 
 
--- truncate
-
+-- truncate, we need DML to see this in action
+create table fruits (name varchar(50));
+insert into fruits values ('apple');
+insert into fruits values ('banana');
+insert into fruits values ('orange');
+insert into fruits values ('lemon');
+insert into fruits values ('kiwi');
+select * from fruits;
+-- truncate wipes out a table completely
+truncate fruits;
+drop table fruits;
 
 
 

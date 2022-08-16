@@ -19,7 +19,7 @@ insert into pets (id, name) values (2, 'Ashes');
 insert into food(id, name) values (default, 'meow mix'); -- id 1
 insert into food(id, name) values (default, 'kibble'); -- id 2
 insert into food(id, name) values (default, 'bird seed'); -- id 3
-insert into food(id, name) values (default, default); -- id 4
-insert into food(id) values (default);
+insert into food(id, name) values (default, default); -- id 4 -- if we say food is default, it will show up as pancakes
+insert into food(id) values (default); -- if we don't specify the food at all, it will be pancakes
 
 
