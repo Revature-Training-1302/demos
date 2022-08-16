@@ -79,13 +79,13 @@ select * from pet_favorite_food ;
 
 -- one driver will have one license and one license will have one driver
 create table if not exists driver(id serial primary key, name varchar(50));
-create table if not exists license(id serial primary key, driver_id integer references driver);
-
+-- we use "deferrable intially deferred" to say that we won't have the id when we first make it
+create table if not exists license(id serial primary key, driver_id integer references driver deferrable initially deferred);
+alter table driver add column  licene_id integer references license deferrable initially deferred;
 
 -- when we insert into the driver table, we need a license id
 insert into driver values(default, 'spongebob');
 -- so we try to insert into license table, but now we need a driver id
-insert into license values(default, 1);
 insert into license values(default, 1);
 
 -- We need some work-around for this paradoxical relationship
