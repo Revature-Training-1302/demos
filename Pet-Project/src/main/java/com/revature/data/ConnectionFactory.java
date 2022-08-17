@@ -33,7 +33,8 @@ public class ConnectionFactory {
             // Do the logic of creating the connection:
 
             // this helps us read information from a properties file, we just have to specify the name:
-            ResourceBundle bundle = ResourceBundle.getBundle("DbConfig.properties");
+            // we just need the name here, not the .properties extension
+            ResourceBundle bundle = ResourceBundle.getBundle("DbConfig");
 
             // reading in the information from the properties file
             // therefore, the credentials aren't stored in the Java code
