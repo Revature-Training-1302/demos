@@ -23,3 +23,4 @@ insert into food(id, name) values (default, default); -- id 4 -- if we say food 
 insert into food(id) values (default); -- if we don't specify the food at all, it will be pancakes
 
 
+create database pets;
