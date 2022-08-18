@@ -18,6 +18,8 @@ public class PetDaoImpl implements PetDao{
     // take in a pet object and return the pet with the updated id
     @Override
     public Pet insert(Pet pet) {
+        System.out.println(pet.toString());
+        System.out.println("Now we're in the DAO trying to pass in pet object to the database");
         // As the code is right now, we insert the same pet over and over again
         // String sql = "insert into pet (id, name, species, food) values (default, 'Ashes', 'cat', 'tuna');";
 
@@ -27,14 +29,14 @@ public class PetDaoImpl implements PetDao{
 //        System.out.println(sql);
 
         // wherever we want to include a value, we leave it as a question mark for now:
-        String sql = "insert into pet (id, name, species, food) values (default, ?, ?, ?);";
+        String sql = "insert into pet(id, name, species, food) values (default, ?, ?, ?);";
 
         try {
             // here, we pass in a flag that tells the program that we want to return the generated id:
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             // taking our statement and setting up the values based on where we put the ?
             preparedStatement.setString(1, pet.getName());
-            preparedStatement.setString(2,pet.getSpecies());
+            preparedStatement.setString(2, pet.getSpecies());
             preparedStatement.setString(3, pet.getFood());
             System.out.println(preparedStatement.toString());
 
@@ -75,6 +77,7 @@ public class PetDaoImpl implements PetDao{
 
     @Override
     public Pet getById(int id) {
+        String sql = "select * from pet where id = ?;";
         return null;
     }
 

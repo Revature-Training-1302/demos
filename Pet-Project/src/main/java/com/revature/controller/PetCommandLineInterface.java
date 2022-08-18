@@ -6,7 +6,7 @@ import com.revature.service.PetService;
 import java.util.List;
 import java.util.Scanner;
 
-// A very primitive controller, where we accept requests from the command line and direct to the appropriate service layers
+// A very primitive controller, where we accept requests from the command line and direct to the appropriate service
 public class PetCommandLineInterface {
     public static void menu() {
         // initialize our Pet Service:
