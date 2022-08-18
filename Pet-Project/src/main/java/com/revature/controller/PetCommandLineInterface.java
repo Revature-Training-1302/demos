@@ -42,6 +42,7 @@ public class PetCommandLineInterface {
                     for(int i = 0; i < pets.size(); i ++) {
                         System.out.println(pets.get(i));
                     }
+                    break;
                 case 4:
                     System.out.println("Enter pet information");
                     System.out.print("Pet Id => ");
@@ -66,6 +67,10 @@ public class PetCommandLineInterface {
                         System.out.println("Something went wrong when deleting the pet");
                     }
                     break;
+                // in the case of just updating food:
+//                case 6:
+//                    System.out.println("Enter id=>");
+//                    System.out.println("Enter food =>");
                 default:
                     System.out.println("Not a valid option.");
                     break;

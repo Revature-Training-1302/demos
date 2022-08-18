@@ -3,6 +3,7 @@ package com.revature.data;
 import com.revature.entity.Pet;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 // Here, we are going to implement some methods that interact with the database:
@@ -75,24 +76,146 @@ public class PetDaoImpl implements PetDao{
         return pet;
     }
 
+    // getting data, rather than inserting:
     @Override
     public Pet getById(int id) {
         String sql = "select * from pet where id = ?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            //
+            preparedStatement.setInt(1, id);
+            System.out.println(preparedStatement);
+            // Now that we've prepared the statement, we just want to execute it:
+            // Result set is going to store the return value of the query:
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // make sure we actually got a value from the query:
+            if(resultSet.next()) {
+                // parse out and extract the data
+                int idDb = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String species = resultSet.getString("species");
+                String food = resultSet.getString("food");
+                // use the data to create a pet object
+                Pet pet = new Pet(idDb, name, species, food);
+                // return the pet object
+                return pet;
+            }
+            else {
+                System.out.println("something went wrong when trying to query for the pet, pet might not exist");
+            }
+        } catch (SQLException e) {
+            System.out.println("Something went wrong when trying to retrieve data.");
+            e.printStackTrace();
+
+        }
+        // if we reach the end of this method, return null
         return null;
+
+        /**
+         * if(username already taken)
+         * try {
+         * throw new RegisterException
+         * }
+         * catch RegisterException{
+         * print stackTrace
+         */
     }
 
     @Override
     public List<Pet> getAllPets() {
-        return null;
+        // set up a list to store the return values (pets)
+        List<Pet> pets = new ArrayList<>();
+
+        // no actual parameter values here
+        String sql = "select * from pet;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // now we're getting multiple pets so we use the while loop
+            // we use a while loop that keeps incrementing the result set until we reach the end (null)
+            while(resultSet.next()) {
+                // for the current row, extract the data
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String species = resultSet.getString("species");
+                String food = resultSet.getString("food");
+                Pet pet = new Pet(id, name, species, food);
+
+                // add the current pet to the list of pets that we're returning:
+                pets.add(pet);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        // at the very end, return pets:
+        return pets;
     }
 
+    // For update, we take in some information and update a pre-existing record in the table:
     @Override
     public Pet update(Pet pet) {
+        String sql = "update pet set name = ?, species = ?, food = ? where id = ?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, pet.getName());
+            preparedStatement.setString(2, pet.getSpecies());
+            preparedStatement.setString(3, pet.getFood());
+            preparedStatement.setInt(4, pet.getId());
+
+            int count = preparedStatement.executeUpdate(); // DML, we use executeUpdate instead of executeQuery
+
+            if(count == 1) {
+                System.out.println("Update successful!");
+                return pet;
+            }
+            else {
+                System.out.println("Something went wrong with the update");
+                if(count == 0) {
+                    System.out.println("No rows were affected");
+                }
+                else {
+                    System.out.println("Many rows were affected");
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        // return null
         return null;
     }
 
+    // only update a certain field/column:
+//    public Pet updateFood(int id, String food) {
+//        String sql = "update pet set food = ? where id = ?;";
+//        PreparedStatement preparedStatement = connection.prepareStatement();
+//        preparedStatement.setString(food);
+//        preparedStatement.setInt(2, id);
+//
+//    }
+
+    // return a boolean of whather the deletion was successful:
     @Override
     public boolean delete(int id) {
+        String sql = "delete from pet where id = ?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+
+            int count = preparedStatement.executeUpdate();
+            if(count == 1) {
+                System.out.println("Deletion successful!");
+                return true;
+            }
+            else {
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
