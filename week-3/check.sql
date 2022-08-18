@@ -7,3 +7,6 @@ insert into person values(default, 'carl', 80);
 insert into person values(default, 'russell', 10);
 
 select * from person;
+
+create table account1 (id serial primary key, username varchar(50) unique);
+insert into account1 values (default, 'user');

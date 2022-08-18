@@ -148,5 +148,3 @@ select * from rich_wizards;
 
 
 
-
-
