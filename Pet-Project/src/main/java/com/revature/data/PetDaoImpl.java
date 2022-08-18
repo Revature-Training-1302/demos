@@ -130,9 +130,14 @@ public class PetDaoImpl implements PetDao{
         // no actual parameter values here
         String sql = "select * from pet;";
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            // Use a simple statement here, because we don't have to change any parameters:
+            Statement statement= connection.createStatement();
 
-            ResultSet resultSet = preparedStatement.executeQuery();
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            // As opposed to :
+            // PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            // statement.executeQuery()
 
             // now we're getting multiple pets so we use the while loop
             // we use a while loop that keeps incrementing the result set until we reach the end (null)
