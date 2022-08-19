@@ -22,8 +22,8 @@ public class App
         logger.trace("Something happened");
         logger.debug("Hello World.");
         logger.info("Give some information about the program.");
-        logger.error("Something bad happened!");
         logger.warn("Something might happen that's bad.");
+        logger.error("Something bad happened!");
         logger.trace("Trace test\n");
 
 
