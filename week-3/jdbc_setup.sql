@@ -11,7 +11,7 @@ select * from pet;
 select * from person;
 
 -- our goal for this demo is to create a relationship between pets and people where a person can adopt many pets but a pet can only have one owner
-alter table pet add column pet_id integer;
+alter table pet add column owner_id integer;
 -- at first, our owner_id column in the pet table will have a bunch null values (indicating that they are not adopted yet)
 
 -- we can achieve the process of adoption by updating a record:
