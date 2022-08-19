@@ -40,3 +40,7 @@ insert into bank_account values (default, 4000);
 rollback to savepoint first_save;
 commit;
 select * from bank_account ;
+
+update bank_account set amount = amount - 200 where id = 2;
+
+select * from bank_account;
