@@ -6,6 +6,7 @@ package com.revature.data;
 public class DaoFactory {
 
     private static PetDao petDao = null;
+    private static PersonDao personDao = null;
 
 
     // don't have access to the constructor:
@@ -22,5 +23,13 @@ public class DaoFactory {
             petDao = new PetDaoImpl();
         }
         return petDao;
+    }
+
+    public static PersonDao getPersonDao() {
+        if(personDao == null) {
+            System.out.println("This should only run once");
+            personDao = new PersonDaoImpl();
+        }
+        return personDao;
     }
 }

@@ -28,4 +28,8 @@ public interface PetDao {
     // return whether the deletion was successful
     // pass in an id to identify which pet is going to be deleted
     public boolean delete(int id);
+
+    public boolean adopt(int personId, int petId);
+
+    public List<Pet> getAdoptedPets(int personId);
 }

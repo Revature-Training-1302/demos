@@ -56,4 +56,14 @@ public class PetDaoTempImpl implements PetDao {
         System.out.println("Delete pet with id: " + id);
         return true;
     }
+
+    @Override
+    public boolean adopt(int personId, int petId) {
+        return false;
+    }
+
+    @Override
+    public List<Pet> getAdoptedPets(int personId) {
+        return null;
+    }
 }

@@ -1,6 +1,7 @@
 package com.revature.data;
 
 import com.revature.entity.Pet;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -222,6 +223,53 @@ public class PetDaoImpl implements PetDao{
             e.printStackTrace();
         }
         return false;
+    }
+
+    //
+    @Override
+    public boolean adopt(int personId, int petId) {
+        // TODO check if id is null
+        String sql = "update pet set owner_id = ? where id = ?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, personId);
+            preparedStatement.setInt(2, petId);
+            int count = preparedStatement.executeUpdate();
+            // if we've successfully update the table, we can return true
+            if(count == 1) return true;
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        // for failure situations, we return false
+        return false;
+    }
+
+    // given an owner id, return a list of pets that they've adopted
+    @Override
+    public List<Pet> getAdoptedPets(int personId) {
+        String sql = "select * from pet where owner_id = ?;";
+        List<Pet> pets = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, personId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+
+            while(resultSet.next()) {
+                // for the current row, extract the data
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String species = resultSet.getString("species");
+                String food = resultSet.getString("food");
+                Pet pet = new Pet(id, name, species, food);
+
+                // add the current pet to the list of pets that we're returning:
+                pets.add(pet);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return pets;
     }
 
     // CRUD Methods:
