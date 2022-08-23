@@ -1,5 +1,5 @@
 -- drop the table to begin with:
-drop table if exists person;
+drop table if exists person cascade;
 -- start from scratch
 create table if not exists person (id serial primary key, name varchar(50), occupation varchar(50), salary integer);
 
