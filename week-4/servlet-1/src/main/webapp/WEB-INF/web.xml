@@ -19,6 +19,20 @@
 
 
 
+  <!-- in the servlet tag, we map the class to a name -->
+  <servlet>
+    <servlet-name>second</servlet-name>
+    <servlet-class>com.revature.SecondServlet</servlet-class>
+  </servlet>
+  <!-- In the servlet mapping tag, we connect the servlet name with a url-pattern -->
+  <servlet-mapping>
+    <!-- here it is very important that we match what set as the name in the servlet tag -->
+    <servlet-name>second</servlet-name>
+    <url-pattern>/second</url-pattern>
+  </servlet-mapping>
+
+
+
 
 
 </web-app>
