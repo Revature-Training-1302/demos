@@ -3,6 +3,8 @@ package com.revature;
 import javax.servlet.*;
 import java.io.IOException;
 
+// This first servlet implements the Servlet interface, so we have to implement all of the servlet
+// methods
 public class FirstServlet implements Servlet{
     // create a member variable to store the servlet configuration
     // store information about the servlet:
@@ -47,5 +49,6 @@ public class FirstServlet implements Servlet{
     public String getServletInfo() {
         return "This is my first servlet.";
     }
+
 
 }

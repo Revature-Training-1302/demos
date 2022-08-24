@@ -5,6 +5,7 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+  <!-- this servlet implemented the servlet interface so we have init, service, destroy, getServletConfig, and getServletInfo methods-->
   <!-- in the servlet tag, we map the class to a name -->
   <servlet>
     <servlet-name>first</servlet-name>
@@ -19,6 +20,7 @@
 
 
 
+  <!-- This is a generic servlet, so we only had to implement the service method -->
   <!-- in the servlet tag, we map the class to a name -->
   <servlet>
     <servlet-name>second</servlet-name>
@@ -29,6 +31,17 @@
     <!-- here it is very important that we match what set as the name in the servlet tag -->
     <servlet-name>second</servlet-name>
     <url-pattern>/second</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- This is the HTTP servlet: -->
+  <servlet>
+    <servlet-name>third</servlet-name>
+    <servlet-class>com.revature.ThirdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>third</servlet-name>
+    <url-pattern>/third</url-pattern>
   </servlet-mapping>
 
 
