@@ -12,6 +12,10 @@ public class ThirdServlet extends HttpServlet {
 
     // get methods are usually made to get some information
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException  {
+        // get parameters from the request:
+        String name = request.getParameter("name");
+        System.out.println(name);
+
         System.out.println("GET request was called!");
         // we use the response to return data/info from this request
         response.setContentType("text/html"); // this is saying that we're expecting some html code in response
@@ -23,6 +27,6 @@ public class ThirdServlet extends HttpServlet {
 
     // post methods usually let us insert or add new data to the database
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("this is the post method");
+        System.out.println("POST method was called");
     }
 }
