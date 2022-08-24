@@ -43,6 +43,7 @@ public class ConnectionFactory {
             String password = bundle.getString("password");
             try {
                 // this line of code makes sure that we load our driver before we make the connection:
+                // TODO: look into this:
                 Class.forName("org.postgresql.Driver");
                 // pass in the credentials
                 connection = DriverManager.getConnection(url, user, password);

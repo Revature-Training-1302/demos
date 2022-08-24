@@ -13,7 +13,8 @@
 </servlet>
   <servlet-mapping>
     <servlet-name>pets</servlet-name>
-    <url-pattern>/pets</url-pattern>
+    <!-- we include the * meaning anything can come after this -->
+    <url-pattern>/pets/*</url-pattern>
   </servlet-mapping>
 
 
