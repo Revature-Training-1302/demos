@@ -42,12 +42,16 @@ public class ConnectionFactory {
             String user = bundle.getString("username");
             String password = bundle.getString("password");
             try {
+                // this line of code makes sure that we load our driver before we make the connection:
+                Class.forName("org.postgresql.Driver");
                 // pass in the credentials
                 connection = DriverManager.getConnection(url, user, password);
             } catch(SQLException e) {
                 // if something goes wrong with the connection, then we print an informative message:
                 System.out.println("Something went wrong when creating the connection");
                 e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
             }
         }
 
