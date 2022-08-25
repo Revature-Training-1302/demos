@@ -16,6 +16,8 @@ public class PetServlet extends HttpServlet{
     // type out doGet, and you should get a shortcut for the get method:
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        int personId = (Integer) req.getSession().getAttribute("id");
+//        System.out.println("Id from session: " + personId);
         String user = req.getParameter("username");
         System.out.println(user);
 
