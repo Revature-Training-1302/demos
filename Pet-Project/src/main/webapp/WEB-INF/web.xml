@@ -18,4 +18,14 @@
   </servlet-mapping>
 
 
+  <servlet>
+    <servlet-name>person</servlet-name>
+    <servlet-class>com.revature.controller.PersonServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>person</servlet-name>
+    <!-- we include the * meaning anything can come after this -->
+    <url-pattern>/person</url-pattern>
+  </servlet-mapping>
+
 </web-app>

@@ -5,6 +5,10 @@ public class Person {
     private String name;
     private String password;
 
+    public Person() {
+
+    }
+
 
     public Person(int id, String name, String password) {
         this.id = id;
