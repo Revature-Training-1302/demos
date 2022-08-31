@@ -28,6 +28,15 @@ public class Main {
         System.out.println(names2.getSize());
         System.out.println(names2);
         System.out.println(names2.get(4));
-        System.out.println(names2.get(15));
+//        System.out.println(names2.get(15));
+
+
+        CustomList<String> names3 = new CustomLinkedList<>();
+        names3.add("Rory");
+        names3.add("Zabeer");
+        names3.add("Luke");
+        System.out.println(names3.toString());
+//        System.out.println(names3.get(9));
+        System.out.println(names3.getSize());
     }
 }

@@ -58,9 +58,11 @@ public class CustomArrayList<T> implements CustomList<T> {
         return (T) elements[i];
     }
 
+    // Given index i, insert element T at that index, and shift the following values over
+    // example: {1,2,4} -----add(2, 3)---> {1,2,3,4};
     @Override
     public void add(int i, T element) {
-
+        // Optional Exercise: fill out this method
     }
 
     @Override
