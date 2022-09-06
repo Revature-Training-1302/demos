@@ -16,17 +16,20 @@ public class App
     public static void main( String[] args )
     {
         // create the logger using the logger factory and pass in the class that this logger is used for:
-        Logger logger = LoggerFactory.getLogger("org.example.App");
+//        Logger logger = LoggerFactory.getLogger("org.example.App");
+//
+//        // we can log different values:
+//        logger.trace("Something happened");
+//        logger.debug("Hello World.");
+//        logger.info("Give some information about the program.");
+//        logger.warn("Something might happen that's bad.");
+//        logger.error("Something bad happened!");
+//        logger.trace("Trace test\n");
+//
+//
+//        System.out.println("message");
 
-        // we can log different values:
-        logger.trace("Something happened");
-        logger.debug("Hello World.");
-        logger.info("Give some information about the program.");
-        logger.warn("Something might happen that's bad.");
-        logger.error("Something bad happened!");
-        logger.trace("Trace test\n");
-
-
-        System.out.println("message");
+        Logger logger1 = LoggerFactory.getLogger("This class doesn't exist.");
+        logger1.info("hello");
     }
 }

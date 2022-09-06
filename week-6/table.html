@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- root element of the entire table-->
+    <table style = "border: solid">
+        <!-- we don't necessarily need a head and a body, we can just jump straight into the rows and data-->
+        <tr >
+            <td>item 1</td>
+            <td>item 2</td>
+            <td>item 3</td>
+            <td>item 4</td>
+            <td>item 5 item 5</td>
+        </tr> 
+        <tr>
+            <td>item 6</td>
+            <td>item 7</td>
+            <td>item 8 item 8</td>
+            <td>item 9</td>
+            <td>item 10</td>
+        </tr>
+    </table>
+
+    <table style = "border: solid;">
+        <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Scooby Doo</td>
+                <!-- If this data spans 2 columns, it will overflow into the next spot-->
+                <td colspan="2">scooby@snacks.commmmmmmmmmmmm</td>
+            </tr>
+            <tr>
+                <td>Shaggy</td>
+                <td>shaggy@snacks.com</td>
+                <td>555-555-2222</td>
+            </tr>
+            <tr>
+                <td>Daphne</td>
+                <td>daphne@snacks.com</td>
+                <td>555-555-3333</td>
+            </tr>
+            <tr>
+                <td>Velma</td>
+                <td>velma@jinkies.com</td>
+                <td rowspan = "2">555-555-4444</td>
+            </tr>
+            <tr>
+                <td>Fred</td>
+                <td>Fred@snacks.com</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    
+</body>
+</html>

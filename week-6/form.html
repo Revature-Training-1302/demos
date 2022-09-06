@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example   2</title>
+</head>
+<body>
+
+    <h1>User Registration Form</h1>
+
+    <form id = "form">
+        <label for = "username">Username</label>
+        <br />
+        <input id = "username" required type = "text" name = "username"/>
+        <br />
+        <label for = "password">Password</label>
+        <br/>
+        <input id = "password" required type = "password" name = "password" value = "123"/>
+
+        <br />
+        <label for = "bio">Bio</label>
+        <textarea id = "bio" placeholder = "Hello my name is Jim..." cols = "100" rows = "8"></textarea>
+
+        <br />
+        <h2>Pick your house</h2>
+        <input checked required id = "g" type = "radio" name = "house" value = "Gryffindor"/>
+        <label for = "g">Gryffindor</label>
+
+        <input id = "h" type = "radio" name = "house" value = "Hufflepuff"/>
+        <label for = "h">Hufflepuff</label>
+
+        <input id = "r" type = "radio" name = "house" value = "Ravenclaw"/>
+        <label for = "r">Ravenclaw</label>
+
+        <input id = "s" type = "radio" name = "house" value = "Slytherin"/>
+        <label for = "s">Slytherin</label>
+
+
+        <br />
+        <h2>Tell us which spells you know:</h2>
+        <input checked type = "checkbox" id = "wl" name = "wl" value = "Wingardium Leviosa"/>
+        <label for = "wl">Wingardium Leviosa</label> <br />
+        <input type = "checkbox" id = "stup" name = "stup" value = "Stupefy"/>
+        <label for = "stup">Stupefy</label> <br />
+        <input type = "checkbox" id = "avada" name = "avada" value = "Avada Kedavra"/>
+        <label for = "avada">Avada Kedavra</label> <br />
+
+
+        <br />
+        <h2>Choose your pet</h2>
+        <select name = "pet" id = "pet">
+            <option value = "owl">Owl</option>
+            <option value = "cat">Cat</option>
+            <option selected value = "toad">Toad</option>
+        </select>
+
+
+        
+        <input type = "submit" value = "Register"/>
+
+
+
+    </form>
+
+    <script>
+            // add an event listener to this page, specifically the form item
+            // whenever we submit, we're going to execute the following code:
+            document.querySelector("#form").addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                var x = document.getElementById("pet");
+                console.log(x);
+                // for each option, we can see the value
+                console.log(x.options[0].value)
+                console.log(x.options[1].value)
+                console.log(x.options[2].value)
+
+                console.log(document.getElementById("password").value)
+                // TODO, send this to some sort of API
+            })
+        
+        
+    </script>
+
+
+    
+</body>
+</html>

@@ -10,7 +10,7 @@
     </appender>
 
     <!-- We can change the level here, only messages at that level or lower will print -->
-    <root level="error">
+    <root level="trace">
         <appender-ref ref="STDOUT" />
     </root>
 </configuration>
