@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            font-size: 50px;
+            background: #F8F4E3;
+            text-align: center;
+            cursor: pointer;
+            /* when the width changes, it's not a sudden jerk, it's more of a slow grow */
+            transition: width 0.25s, background-color 0.25s;
+        }
+        div:hover {
+            width: 550px;
+            background-color: #b6b3a4;
+        }
+    </style>
+</head>
+<body>
+    <div>Hover Over Me</div>
+</body>
+</html>

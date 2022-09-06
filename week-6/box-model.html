@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* This will apply the 10px to the top, bottom, left, and right of the element */
+            margin: 10px;
+            /* we can be more specific and indicate the values for each side starting from top and going clockwise */
+            margin: 10px 20px 30px 40px;
+            /* vertical dimensions, horizonatal dimensions */
+            margin: 20px 30px;
+            /* top, horizontal, bottom */
+            margin: 100px 50px 150px;
+            /*specify the sides explicitly: */
+            margin-top: 30px;
+            margin-bottom: 60px;
+            border: 1px solid black;
+            padding: 4px;
+            box-sizing: border-box;
+
+        }
+
+        img {
+            width: 100px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        This is the content
+    </div>
+    <div>
+        This is the content
+    </div>
+
+    <div style = "margin-top: 200px">This is the content</div>
+
+    <img src = "frog.jpg"/>
+    <img src = "frog.jpg"/>
+    <img src = "frog.jpg"/>
+    <img src = "frog.jpg"/>
+    <img src = "frog.jpg"/>
+    <img src = "frog.jpg"/>
+    
+</body>
+</html>

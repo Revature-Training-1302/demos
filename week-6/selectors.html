@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- internal styling, it's probably best to stick with external but this is okay for a short demo -->
+    <style>
+
+        p {
+            color: purple;
+        }
+
+
+        h2 {
+            color: red;
+        }
+        /*Apply green color to all members of the header class */
+        .banana {
+            color: green;
+        }
+
+        /* Id is more specific, so it takes precedence over class as well as element selectors*/
+        #header3 {
+            color: blue;
+        }
+
+        /* We can use a comma to separate multiple selectors */
+        p, h2 {
+            font-size: 30px;
+        }
+
+        /* should apply to all p's that are direct children of div tags */
+        div > p {
+            text-decoration: underline;
+        }
+
+        /* this is going to affect all p's that are descendant of div */
+        div p {
+            text-transform: capitalize;
+        }
+
+        /* sibling selector, select p's that are siblings (on the same level) of div */
+        div ~ p {
+            border: dotted;
+        }
+
+        /* Adjacent siblings, select elements that are right after */
+        div + p {
+            background-color: pink;
+        }
+
+        div {
+            background-color: red;
+        }
+
+        div:hover {
+            background-color: black;;
+        }
+
+        /* Pseudo element selector, in this case we're selecting the first letter of each p element: */
+        p::first-letter {
+            border: solid;
+            text-decoration: dashed;
+        }
+
+        /* After every div, we insert some new content */
+        div::after{
+            content: "Content inserted after.";
+            color: blue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <p>paragraph</p>
+    <p>paragraph</p>
+    <h2>Header 1</h2>
+    <h2 class = "banana">Header 2</h2>
+    <h2 id = "header3" class = "header">Header 3</h2>
+
+    <div>
+        <p>This paragraph is inside of a div</p>
+        <span>
+            <p>This paragraph is inside of a span insie of a div</p>
+        </span>
+    </div>
+
+    <p>
+        This is an adjacent sibling of div
+    </p>
+
+    <p>This is a sibling of div</p>
+
+    <div>Hover over me</div>
+
+    <p>First letter</p>
+
+    
+</body>
+</html>
