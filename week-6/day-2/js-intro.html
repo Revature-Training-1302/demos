@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+
+   
+</head>
+<body>
+
+    <h1>Hello </h1>
+
+
+    <script>
+        // similar to System.out.println() in Java
+        // print this out in the console
+        console.log("Hello World");
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MIN_VALUE);
+        // we can add an alert to have a message pop up:
+        // alert("Hello");
+
+        // create some variables
+        var fruit = "apple";
+        console.log(fruit);
+        console.log(typeof fruit);
+
+        // numbers, integers or decimals:
+        var age = 30;
+        console.log(typeof age);
+        console.log(typeof 45.67);
+
+        var isEven = true;
+        console.log(isEven);
+        console.log(typeof isEven);
+
+
+        var x = null;
+        // explicitly set an object to undefined
+        var y = undefined;
+        // or we can not declare it and it will implicitly set to undefined
+        var z;
+        console.log(x);
+        console.log("y : " + typeof y);
+        console.log(typeof z);
+
+        // Objects in JavaScript
+        var cat = {
+            name: "Ashes",
+            species: "cat",
+            foods: ["tuna" ,"cat food", "cheese"]
+        };
+
+        // print the entire object
+        console.log(cat);
+        // print out individual fields:
+        console.log(cat.name);
+        console.log(cat["species"]);
+        console.log(cat.foods);
+        console.log(cat.foods[0]);
+        cat.foods.push("bananas");
+        console.log(cat.foods);
+        console.log(cat.foods.pop());
+        console.log(cat.foods.length);
+        console.log(typeof cat.foods);
+
+        // Object constructor:
+        var person = new Object();
+        person.name = "rory";
+        person.state = "VA";
+        person.job = "revature";
+        console.log(person);
+
+        for(var i = 0; i < 10; i ++) {
+            console.log(i);
+        }
+
+        // iterate through the keys of the person object
+        for(var key in person) {
+            console.log(key);
+            console.log(person[key]);
+        }
+
+        // JS doesn't differentiate between characters and strings
+        var s = "";
+        s += "a";
+        var r = 'a';
+        console.log('type of r ' + typeof r);
+        console.log(s);
+        // if something goes wrong:
+        console.error(s);
+
+        // split up a string into an array of characters
+        console.log("banana".split(""));
+
+        // data object in JS:
+        // by default, the current data:
+        var currentDate = new Date();
+        console.log(currentDate);
+
+        // if we pass in miliseconds, it's the amout of miliseconds after Jan 1st 1970. 
+        var date1 = new Date(0);
+        console.log(date1);
+
+        // must be valid numbers
+        var date2 = new Date("3 February, 2020");
+        console.log(date2);
+
+        // functions later on:
+
+
+    </script>
+    
+    
+</body>
+</html>
