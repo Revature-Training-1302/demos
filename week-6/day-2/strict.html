@@ -10,6 +10,26 @@
         <script>
             // 'use strict';
             x=10; // using variable x before defined
+            
+            // look into this:
+            var person = {
+                name: 'rory',
+                name: 'rory2'
+            };
+            // duplicate parameters
+            function add(val1, val) {
+                // this strict rule will only apply to the contents of the function
+                'use strict';
+                z = 4;
+                return val + val;
+            };
+            // change a read-only property
+            var array = [1,2,3,4,5];
+            // look into this:
+            array.length = 10;
+
+            add(2,3);
+
         </script>
 </body>
 </html>

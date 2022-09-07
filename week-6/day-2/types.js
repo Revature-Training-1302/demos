@@ -27,7 +27,7 @@ console.log(person1 === person2);
 var equal = true;
 // check if 2 objects are equal:
 for(var key in person1){
-    if(person[key] != person2[key]) {
+    if(person1[key] != person2[key]) {
         equal = false;
     }
 }
