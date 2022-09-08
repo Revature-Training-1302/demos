@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div, p, a {
+            border: solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">DIV
+        <p class="hint">P<br>
+            <a href="#">Click Me!!</a>
+        </p>
+    </div>
+    
+    <script>
+        // alert the user which element is being clicked
+        function showTagName() {
+            alert("Clicked: "+ this.tagName);
+            console.log(this);
+        }
+        
+        // for all the elements, add an event listener
+        var elems = document.querySelectorAll("div, p, a");
+        for(let elem of elems) {
+            // optional third element of whether or not we capture (defaults to false if we don't include)
+            elem.addEventListener("click", showTagName, true);
+        }
+    </script>
+</body>
+</html>

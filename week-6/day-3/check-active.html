@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id = 'time'>0</h1>
+
+    <script>
+        var time = 0;
+
+        // whenever a click or a key is pressed, we reset the time
+        document.addEventListener('click', reset_time);
+        document.addEventListener('keydown', reset_time);
+
+        // every second, increment the inactive time
+        setInterval(increment_time, 1000);
+
+        // this increments the time by 1
+        function increment_time() {
+            time += 1;
+            document.getElementById('time').innerText = time;
+            if(time == 10) {
+                alert('You have been inactive for more than 10 seconds');
+            }
+        }
+
+        // reset the time
+        function reset_time() {
+            time = 0;
+            document.getElementById('time').innerText = time;
+        }
+    </script>
+    
+</body>
+</html>

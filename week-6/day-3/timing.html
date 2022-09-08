@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = 'btn1'>Hello</button>
+    <p id = 'loading'>Loading.</p>
+
+    <script>
+        let element = document.getElementById('btn1');
+        element.addEventListener('click', () =>  setTimeout(hello, 3000));
+
+        setInterval(addDot, 100);
+       
+        // whenever this function is called, we add a dot to the loading message:
+        function addDot(){
+            let element = document.getElementById('loading');
+            element.innerText += '.'
+        }
+
+        function hello() {
+            alert('Hello!');
+        }
+    </script>
+    
+</body>
+
+</html>

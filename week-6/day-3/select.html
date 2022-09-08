@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Child of div 2</p>
+        <p>child of div 2</p>
+    </div>
+
+    <h1 id = "sibling1">Sibling 1</h1>
+    <h1 id = "sibling2"> Sibling 2</h1>
+
+    <p id = "a">Hello from p tag</p>
+
+    <script>
+        
+        var elements = document.querySelectorAll("div");
+        var p = document.getElementById("a");
+        // log the text part of the p tag
+        console.log(p.innerText);
+        // log the list of elements of the div tag
+        console.log(elements);
+
+        // see the child elements of the div
+        var children = elements[0].children;
+        for(let i = 0; i < children.length; i ++) {
+            console.log(children[i]);
+        }
+
+        let sibling1 = document.getElementById("sibling1");
+        console.log(sibling1.nextElementSibling);
+    </script>
+    
+</body>
+</html>
