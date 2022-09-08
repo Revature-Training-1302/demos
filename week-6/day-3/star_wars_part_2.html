@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = "btn">Get Data</button>
+    <div id = "result"></div>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', getData);
+
+        function getData() {
+            const base_url = 'https://swapi.dev/api/';
+            // using the fetch api instead of the XML request
+            fetch(`${base_url}/people`)
+            // first, we convert the response to json
+            .then(response => response.json())
+            // now, we take the JSONified string and work on it
+            .then(data => {
+                var characters = data.results;
+                console.log(typeof characters);
+                // set up the HTML code and put it into the page:
+                let htmlText = '';
+                    for(const character of characters) {
+                        htmlText += `<h1>${character.name}</h1>`;
+                        htmlText += `<h2>Height: ${character.height}</h2>`;
+                    }
+                    document.getElementById('result').innerHTML = htmlText;
+            })
+            .catch(error => {
+                // display an error message in red:
+                document.getElementById('result').innerHTML = `<h1 style = "color: red;">Something went wrong with the request</h1>`;
+                var p = document.createElement('p');
+                p.innerText = `<p>${error}</p>`
+                document.getElementById('result').appendChild(p);
+            });
+
+
+        }
+    </script>
+    
+</body>
+</html>

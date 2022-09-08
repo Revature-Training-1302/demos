@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // take in an executor function that determines if we should resolve or reject the process
+let promise1 = new Promise(function(resolve, reject) {
+    var success = true;
+    if(success) {
+        resolve ('The process succeeded');
+    }
+    else {
+        reject('The process failed');
+    }
+})
+
+// now that the promise is defined, we use the .then method to indicate what happens upon success
+promise1
+// passing in a callback function that specifies how we resolve
+.then((message) => {console.log(message)})
+// passing in a callback function that specifies how we reject
+.catch((message) => {console.error(message)});
+    </script>
+    
+</body>
+</html>
