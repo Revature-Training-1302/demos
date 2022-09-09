@@ -1,0 +1,15 @@
+/* Define variables here: */
+/* Accessible from anywhere in the project */
+/* Root of the page is html */
+:root{
+    /* imagine we're reusing this color throughout our project */
+    --main-header-color: #67806e;
+}
+
+.header1 {
+    color: var(--main-header-color);
+}
+
+.header2 {
+    color: var(--main-header-color);
+}

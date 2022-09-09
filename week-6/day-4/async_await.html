@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // make this function asynchronous
+    async function asyncFunc() {
+      // wait for the fetch to complete:
+      let response = await fetch('https://swapi.dev/api/people');
+      // wait until we get the text of the of the response:
+      let text = await response.text(); // response body consumed
+      document.body.innerHTML += text;
+    }
+
+    // can't call await outside of an asynchronous function:
+    await fetch('test.js');
+
+    asyncFunc();
+
+    // arbitrary for loop that updates the page:
+    for(let i = 0; i < 100; i ++){
+      document.body.innerHTML += i;
+    }
+  </script>
+
+</body>
+
+</html>

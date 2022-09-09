@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type = "module">
+        import {val ,url, val1} from './module1.js';
+        // change name of imported variable:
+        import {val2 as newVal, val3 as newVal2, val4 as newVal3} from './module1.js';
+        
+
+        // imported this value from the module 1:
+        console.log(val);
+        console.log(val1);
+        console.log(newVal);
+        console.log(newVal2);
+        console.log(newVal3);
+        console.log(`${url}/pets/5`)
+
+    </script>
+    
+</body>
+</html>
