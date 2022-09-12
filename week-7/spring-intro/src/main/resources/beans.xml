@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        ">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- We define our beans within the beans tags -->
 
@@ -15,9 +17,79 @@
         <property name="message" value = "Hi"/>
     </bean>
 
+    <!-- We can also have a value tag inside of the property tag -->
     <bean id = "helloWorld2" class = "com.revature.entity.HelloWorld">
-        <property name="message" value = "Duplicate message"/>
+        <property name="message">
+            <value>Hi 2</value>
+        </property>
     </bean>
+
+    <bean id = "pokemon1" class = "com.revature.entity.Pokemon">
+        <constructor-arg index = "0" value = "Pikachu"/>
+        <constructor-arg index = "1">
+            <value>Pika</value>
+        </constructor-arg>
+        <constructor-arg index = "2" value = "Electric"/>
+        <constructor-arg index = "3" value = "Mouse"/>
+        <constructor-arg index = "4" value = "20"/>
+    </bean>
+
+    <bean id = "pokemon2" class = "com.revature.entity.Pokemon">
+        <property name="species" value = "Poochyena"/>
+        <property name="name" value = "Pooch"/>
+        <property name="type1" value = "Dark"/>
+        <property name="type2" value = "Dog"/>
+        <property name = "level" value = "30"/>
+    </bean>
+
+    <bean id = "trainer1" class = "com.revature.entity.Trainer">
+        <property name="name" value = "Ash Ketchum"/>
+        <property name="num_badges" value = "100"/>
+        <!-- For non-primitives, we reference the id of another bean -->
+        <property name="starter" ref = "pokemon1"/>
+    </bean>
+
+    <!-- Create an array of objects: -->
+    <bean id = "list1" class = "com.revature.entity.ListExample">
+        <property name = "names">
+            <array value-type="java.lang.String">
+                <value>Luke</value>
+                <value>Han</value>
+                <value>Leia</value>
+                <value>C3PO</value>
+            </array>
+        </property>
+    </bean>
+
+    <!-- Annotation-based configuration -->
+    <context:annotation-config/>
+
+
+
+    <bean id = "order" class = "com.revature.entity.Order">
+        <property name="id" value = "1"/>
+    </bean>
+
+    <bean id = "account1" class = "com.revature.entity.Account" name = "ron">
+        <property name="id" value = "1"/>
+        <property name="name" value = "Ron Weasley"/>
+        <property name="password" value = "scabbers"/>
+    </bean>
+
+    <bean id = "account2" class = "com.revature.entity.Account" name = "harry">
+        <property name="id" value = "2"/>
+        <property name="name" value = "Harry Potter"/>
+        <property name="password" value = "hedwig"/>
+    </bean>
+
+    <bean id = "item" class = "com.revature.entity.Item">
+        <property name="id" value = "1"/>
+        <property name="name" value = "Firebolt"/>
+        <property name="category" value = "brooms"/>
+    </bean>
+
+
+
 
 
 </beans>
