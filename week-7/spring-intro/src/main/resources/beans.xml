@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        ">
+
+    <!-- We define our beans within the beans tags -->
+
+    <!-- Property based injection -->
+    <!-- First, create an object with no args, then use setters to assign values -->
+    <!-- Important: we need a no-args constructor in our class -->
+    <bean id = "helloWorld" class = "com.revature.entity.HelloWorld">
+        <property name="message" value = "Hi"/>
+    </bean>
+
+    <bean id = "helloWorld2" class = "com.revature.entity.HelloWorld">
+        <property name="message" value = "Duplicate message"/>
+    </bean>
+
+
+</beans>
