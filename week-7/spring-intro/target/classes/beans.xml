@@ -67,7 +67,6 @@
 
 
     <bean id = "order" class = "com.revature.entity.Order">
-        <property name="id" value = "1"/>
     </bean>
 
     <bean id = "account1" class = "com.revature.entity.Account" name = "ron">
@@ -83,9 +82,6 @@
     </bean>
 
     <bean id = "item" class = "com.revature.entity.Item">
-        <property name="id" value = "1"/>
-        <property name="name" value = "Firebolt"/>
-        <property name="category" value = "brooms"/>
     </bean>
 
 

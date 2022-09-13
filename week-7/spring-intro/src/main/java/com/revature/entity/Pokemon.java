@@ -71,4 +71,13 @@ public class Pokemon {
                 ", level=" + level +
                 '}';
     }
+
+    // set up custom lifecycle methods:
+    public void init() {
+        System.out.println("Pokemon object is being created.");
+    }
+
+    public void destroy() {
+        System.out.println("Pokemon object is being destroyed.");
+    }
 }

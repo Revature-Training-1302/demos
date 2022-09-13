@@ -3,6 +3,7 @@ package com.revature.entity;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 /*
 the Order class contains an id as well as
 1. an instance of Account class
@@ -15,6 +16,7 @@ inject values into these fields based on what configuration we provide (xml file
 
 @ToString
 public class Order {
+    @Value("1")
     private int id;
     private Account buyer;
 
