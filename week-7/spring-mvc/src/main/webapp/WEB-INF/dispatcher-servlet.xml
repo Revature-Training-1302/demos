@@ -22,5 +22,13 @@
         <!-- "hello" -> "WEB-INF/views/hello.jsp" -->
     </bean>
 
+    <!-- This allows us to convert Java objects to JSON to send/receive in our HTTP Requests: -->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
 
 </beans>

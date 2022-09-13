@@ -16,4 +16,9 @@ public class HelloController {
     public String hello() {
         return "hello";
     }
+
+    @RequestMapping("/cat")
+    public String cat() {
+        return "cat";
+    }
 }
