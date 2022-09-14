@@ -41,6 +41,6 @@ public class PersonService {
 
     public List<Pet> getAdopted(Long personId) {
         // return the pets that correspond to this person's id
-        return personRepository.findById(personId).get().getAdoptedPets();
+        return petRepository.findAdoptedPets(personId);
     }
 }

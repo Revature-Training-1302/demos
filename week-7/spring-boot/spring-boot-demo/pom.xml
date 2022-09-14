@@ -50,6 +50,17 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!--Spring Boot Devtools makes our application restart every time we make a change to our code:-->
+		<!-- In intelliJ, we have to enable the auto build -->
+		<!-- Ctrl + alt + S, we should see settings -> Build, Execution, Deployment -> Compiler -> Make sure "Build Project Automatically" is checked -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+
 	</dependencies>
 
 	<build>

@@ -15,6 +15,7 @@ public class DTOTestController {
     @PostMapping
     public void post(@RequestBody PetPerson petPerson) {
         System.out.println(petPerson);
+        System.out.println("Hello");
         Pet pet = petPerson.getPet();
         Person person = petPerson.getPerson();
         // Do whatever we need to do with the entities:

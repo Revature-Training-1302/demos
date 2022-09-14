@@ -3,6 +3,7 @@ package com.revature.springbootdemo.repository;
 import com.revature.springbootdemo.entity.Pet;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -22,6 +23,10 @@ public interface PetRepository extends JpaRepository<Pet, Long> {
 
     // Custom Query:
     // Come back to this, setting up the relationship:
+    @Query(value = "SELECT * FROM pet where person_fk = ?1", nativeQuery = true)
+    // ?1 refers to the parameter owner_id
+    // If we added more parameters, the syntax would be ?2, ?3, etc.
+    public List<Pet> findAdoptedPets(Long owner_id);
 
 
 

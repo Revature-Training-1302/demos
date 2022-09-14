@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+
+    <!-- Creating beans based on the classes that we defined -->
+    <bean id = "sampleAdder" class = "com.revature.SampleAdder"/>
+    <bean id = "doAfterReturningAspect" class = "com.revature.AdderAfterReturnAspect"/>
+
+    <aop:config>
+<!--        Define the aspect to use class that we made: -->
+        <aop:aspect id = "aspects" ref ="doAfterReturningAspect">
+<!--             Set up the pointcut to execute any method in the SampleAdder class that has 2 integers as parameters-->
+            <!-- Can use .. to accept any number of parameters -->
+            <aop:pointcut id="pointCutAfterReturning" expression="execution (* com.revature.SampleAdder.*(..))"/>
+            <!-- Define which method should be invoked when we reach this joinpoint -->
+            <aop:after-returning method = "afterReturn" returning = "returnValue" pointcut-ref="pointCutAfterReturning"/>
+
+            <aop:after-throwing method="afterThrow" throwing="exception" pointcut-ref="pointCutAfterReturning"/>
+        </aop:aspect>
+
+    </aop:config>
+
+
+
+
+</beans>

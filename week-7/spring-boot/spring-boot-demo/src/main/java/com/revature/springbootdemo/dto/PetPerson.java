@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 // DTO - Data Transfer Object
+// Used when we want to package together multiple classes/fields into one request body
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
