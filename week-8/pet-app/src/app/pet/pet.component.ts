@@ -19,6 +19,9 @@ export class PetComponent implements OnInit {
 
   img_url:String = "https://www.aquariumofpacific.org/images/exhibits/Magnificent_Tree_Frog_900.jpg";
 
+  // this boolean keeps track of whether we want to show the "extra" content on our page
+  show_extra_content:boolean = false;
+
   // The only thing we want to use our constructor for is dependency injection:
   constructor() {
     

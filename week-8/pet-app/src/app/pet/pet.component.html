@@ -1,19 +1,23 @@
-<p>pet works!</p>
+<div>
+    <h1>Pet:
+    </h1>
+    <h2>Name: {{pet.name}}</h2>
+    <h2>Species: {{pet.species}}</h2>
+    <h2>Food {{pet.food}}</h2>
+</div>
 
-<p>This will be written to the page directly word-for-word</p>
 
-<p>2 + 2</p>
-<p>{{ 2+2 }}</p>
-<p>{{"Hello " + "World"}}</p>
+<div *ngIf="show_extra_content">
+    <h1>One way data binding:</h1>
+    <h2>Todo: Switch this based on toggle</h2>
 
-<h1>One way data binding:</h1>
-<h1>Pet:
-</h1>
-<h2>Name: {{pet.name}}</h2>
-<h2>Species: {{pet.species}}</h2>
-<h2>Food {{pet.food}}</h2>
-
-<img width = "200px" src = {{img_url}}/>
-
-<!-- Event binding-->
-<button (click) = "hello()">Click Me</button>
+    <p>This will be written to the page directly word-for-word</p>
+    
+    <p>2 + 2</p>
+    <p>{{ 2+2 }}</p>
+    <p>{{"Hello " + "World"}}</p>
+    <img width = "200px" src = {{img_url}}/>
+    
+    <!-- Event binding-->
+    <button (click) = "hello()">Click Me</button>
+</div>
