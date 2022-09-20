@@ -30,7 +30,7 @@ public class Person {
     @OneToMany(targetEntity = Pet.class, cascade = CascadeType.ALL)
     // set up the column in the pet table
     @JoinColumn(name = "person_fk", referencedColumnName = "id")
-    List<Pet> adoptedPets;
+    private List<Pet> adoptedPets;
 
     public Person() {
         // initialize our adopted pets to be an empty array list:
