@@ -1,16 +1,17 @@
 <h1>Add Pet</h1>
 
-<div>
+<form (submit)="add()">
     <label for = "pet-name">Name:</label>
-    <input type = "text" id = "pet-name" [(ngModel)]="pet.name"/>
+    <input name = "name" required type = "text" id = "pet-name" [(ngModel)]="pet.name"/>
 
     
     <label for = "pet-species">Species:</label>
-    <input type = "text" id = "pet-species" [(ngModel)]="pet.species"/>
+    <input name = "species" required type = "text" id = "pet-species" [(ngModel)]="pet.species"/>
 
     
     <label for = "pet-food">Food:</label>
-    <input type = "text" id = "pet-food" [(ngModel)]="pet.food"/>
+    <input name = "food" required type = "text" id = "pet-food" [(ngModel)]="pet.food"/>
 
-    <button (click)="add()">Add Pet</button>
-</div>
+
+    <input type = "submit" value = "Add Pet"/>
+</form>

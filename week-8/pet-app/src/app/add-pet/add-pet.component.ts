@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pet } from '../interfaces';
+import { PetService } from '../services/pet.service';
 
 @Component({
   selector: 'app-add-pet',
@@ -10,7 +11,8 @@ export class AddPetComponent implements OnInit {
   // declare this pet as partial, because we don't have the id just yet:
   pet!:Partial<Pet>;
 
-  constructor() { }
+  // dependency injection, put the service in the constructor:
+  constructor(private petService:PetService ) { }
 
   ngOnInit(): void {
     // 2 way binding, making sure that this values are displayed on some form on our web page
@@ -24,9 +26,31 @@ export class AddPetComponent implements OnInit {
   }
 
   add(): void{
-    // Once we've changed up some data on our form, we can console log to display those changes:
-    console.log(this.pet);
+    if(this.validatePet()) {
+      // Once we've changed up some data on our form, we can console log to display those changes:
+      this.petService.addPet(this.pet).subscribe(
+        pet => {
+          // taking the returned id value and setting it to the pet
+          this.pet.id = pet.id;
+          // alert the user what the generated id is:
+          alert(`Pet added successfully, generated id is : ${pet.id}`);
+        }
+      )
+    }
+    else {
+      alert("One or more fields is not valid!");
+    }
     // TODO: Send this to database
   }
+
+  validatePet() {
+    if(this.pet.name == "") return false;
+    if(this.pet.species == "") return false;
+    if(this.pet.food == "") return false;
+    // if all of the fields are not empty, we can return true:
+    return true;
+  }
+
+  // TODO, validate the data before we send it:
 
 }
