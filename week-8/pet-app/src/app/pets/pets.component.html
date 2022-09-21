@@ -9,7 +9,7 @@
     </thead>
     <tbody>
         <!-- tr is the element that we want to repeat, so that's where we put the ngFor directive:-->
-        <tr *ngFor="let pet of pets">
+        <tr  class = "pet" routerLink="/pet/{{pet.id}}"   *ngFor="let pet of pets">
             <!-- For each indiv. pet, we render some td elements to show the individual properties:-->
             <td>{{pet.id}}</td>
             <td>{{pet.name}}</td>

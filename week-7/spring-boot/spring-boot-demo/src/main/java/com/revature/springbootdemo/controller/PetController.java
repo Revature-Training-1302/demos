@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+// we can access these requests from anywhere:
+
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/pets")
 public class PetController {
@@ -19,11 +22,14 @@ public class PetController {
         return petService.insert(pet);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping()
     public List<Pet> getAll() {
         return petService.getAll();
     }
 
+    // we can also apply CORS rules at the method level:
+    @CrossOrigin(origins = "*")
     @GetMapping("/{id}")
     public Pet getById(@PathVariable("id") Long id) {
         return petService.getById(id);

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,8 @@ const routes:Routes = [
   // when go to /pets, we want to display the PetsComponent
   {path: 'pets', component: PetsComponent},
   {path: 'add', component: AddPetComponent},
-  {path: 'pet', component: PetComponent},
+  // adding an id parameter here to indicate which pet we want to view here:
+  {path: 'pet/:id', component: PetComponent},
   {path: 'instructions', component: InstructionsComponent}
 ]
 
@@ -37,6 +39,7 @@ const routes:Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     // lets us use the ngModel for 2-way binding
     FormsModule,
     // configure the router module to use the routes that we defined above:

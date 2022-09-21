@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Pet} from '../interfaces';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import {url} from '../endpoint';
 
 // Injectable lets us use inject this as a dependency:
 @Injectable({
@@ -8,61 +10,35 @@ import { Observable, of } from 'rxjs';
 })
 export class PetService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   // take in a pet with no id, return an obserable of a pet with the id
   addPet(pet:Partial<Pet>): Observable<Partial<Pet>>{
-    // set a dummy id:
-    pet.id = 4;
     // TODO, send this to the database:
     // return an observable of our pet object, simulating what we would get from an HTTP response:
-    return of(pet);
+    // post takes in a url and an object as the body:
+    return this.http.post<Pet>(`${url}/pets`, pet);
   }
 
   // simulating an http response by manually constucting an observable:
   getAllPets(): Observable<Pet[]> {
     // dummy data, will be replaced with http request:
-    let pets:Pet[] = [
-      {
-        id: 1,
-        name: "Garfield",
-        species: "cat",
-        food: "lasagna"
-      },
-      {
-        id: 2,
-        name: "Scooby Doo",
-        species: "dog",
-        food: "Scooby Snacks"
-      },
-      {
-        id: 3,
-        name: "Clifford",
-        species: "dog",
-        food: "kibble"
-      },
-    ]
-    return of(pets);
+    return this.http.get<Pet[]>(`${url}/pets`);
   }
 
-  getById(id_ :Number): Observable<Pet> {
-    // dummy data, will be replaced with http request:
-    let pet:Pet = {
-      id: id_,
-      name: "Dummy pet",
-      species: "cat",
-      food: "food"
-    };
-    return of(pet);
+  getById(id :Number): Observable<Pet> {
+    // use template literals to construct the endpoint:
+    let req_url = `${url}/pets/${id}`;
+    console.log(req_url);
+    return this.http.get<Pet>(req_url);
   }
 
   updatePet(pet: Pet): Observable<Pet> {
-    return of(pet);
+    return this.http.put<Pet>(`${url}/pets`, pet);
   }
 
-  deletePet(id:Number): Observable<boolean> {
-    // just return a boolean that indicates whether the deletion was successful:
-    return of(true);
+  deletePet(id:Number) {
+    return this.http.delete(`${url}/pets/${id}`);
   }
 
 
