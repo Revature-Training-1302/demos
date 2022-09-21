@@ -9,6 +9,18 @@ import { InstructionsComponent } from './instructions/instructions.component';
 import { PetComponent } from './pet/pet.component';
 import { PetsComponent } from './pets/pets.component';
 import { AddPetComponent } from './add-pet/add-pet.component';
+import { StyleTestComponent } from './style-test/style-test.component';
+import { RouterModule, Routes } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
+
+// set up our routes:
+const routes:Routes = [
+  // when go to /pets, we want to display the PetsComponent
+  {path: 'pets', component: PetsComponent},
+  {path: 'add', component: AddPetComponent},
+  {path: 'pet', component: PetComponent},
+  {path: 'instructions', component: InstructionsComponent}
+]
 
 @NgModule({
   // we need to declare all of our components in this array:
@@ -17,14 +29,18 @@ import { AddPetComponent } from './add-pet/add-pet.component';
     InstructionsComponent,
     PetComponent,
     PetsComponent,
-    AddPetComponent
+    AddPetComponent,
+    StyleTestComponent,
+    NavbarComponent
   ],
   // whatever modules we need to import, we'll include those in this array:
   imports: [
     BrowserModule,
     AppRoutingModule,
     // lets us use the ngModel for 2-way binding
-    FormsModule
+    FormsModule,
+    // configure the router module to use the routes that we defined above:
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   // root component of the app:

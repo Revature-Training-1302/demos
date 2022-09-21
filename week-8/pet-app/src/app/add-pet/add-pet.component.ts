@@ -43,8 +43,9 @@ export class AddPetComponent implements OnInit {
     // TODO: Send this to database
   }
 
+  // custom validate function:
   validatePet() {
-    if(this.pet.name == "") return false;
+    if(this.pet.name?.trim() == "") return false;
     if(this.pet.species == "") return false;
     if(this.pet.food == "") return false;
     // if all of the fields are not empty, we can return true:

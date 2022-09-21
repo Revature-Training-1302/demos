@@ -1,8 +1,6 @@
-<app-instructions></app-instructions>
-<!-- Instantiate the component pet: -->
-<app-pet></app-pet>
-<!-- Instantiate the component pets: -->
-<app-pets></app-pets>
-<!-- Instantiate the component add-pet: -->
-<app-add-pet></app-add-pet>
+<!-- we can display in the app.component because we want this navbar to exist on every page:-->
+<app-navbar></app-navbar>
+
+<!-- By Instantiating this component, this makes it so that the proper components are displayed when we go to the correct path -->
+<router-outlet></router-outlet>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import the Pet interface:
 import {Pet} from '../interfaces';
+import { PetService } from '../services/pet.service';
 
 
 // This decorator makes this class a component
@@ -23,7 +24,7 @@ export class PetComponent implements OnInit {
   show_extra_content:boolean = false;
 
   // The only thing we want to use our constructor for is dependency injection:
-  constructor() {
+  constructor(private petService: PetService) {
     
    }
 
@@ -31,16 +32,37 @@ export class PetComponent implements OnInit {
   ngOnInit(): void {
     // We can set up any variables or fields here:
     // because the pet is a field of this class, we use the "this" keyword
-    this.pet = {
-      id: -1,
-      name: "garfield",
-      species: "cat",
-      food: "lasagna"
-    }
+    let petId:Number = 4;
+    // returns an observable, so we have to subscribe to the return value
+    this.petService.getById(petId).subscribe (
+      // take in an arrow function with the returned value as the parameter
+      returnPet => {
+        // update our pet field with the returned value from the service
+        this.pet = returnPet;
+      }
+    )
+    
   }
 
   hello() {
     alert("Hello!");
+  }
+
+  update() {
+    this.petService.updatePet(this.pet).subscribe(
+      returnPet => {
+        console.log(returnPet);
+      }
+    )
+  }
+
+  delete() {
+    this.petService.deletePet(this.pet.id).subscribe(
+      deleted => {
+        if(deleted) alert("Pet deleted!");
+        else alert("Pet not deleted!");
+      }
+    )
   }
 
 }
