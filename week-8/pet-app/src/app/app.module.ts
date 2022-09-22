@@ -15,6 +15,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AdoptedComponent } from './adopted/adopted.component';
+import { CookieModule } from 'ngx-cookie';
+import { LogoutComponent } from './logout/logout.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 // set up our routes:
 const routes:Routes = [
@@ -25,7 +29,10 @@ const routes:Routes = [
   {path: 'pet/:id', component: PetComponent},
   {path: 'instructions', component: InstructionsComponent},
   {path: "login", component: LoginComponent},
-  {path: "register", component: RegisterComponent}
+  {path: "register", component: RegisterComponent},
+  {path: "adopted", component: AdoptedComponent},
+  {path: "logout", component: LogoutComponent},
+  {path: "wishlist", component: WishlistComponent}
 ]
 
 @NgModule({
@@ -39,7 +46,10 @@ const routes:Routes = [
     StyleTestComponent,
     NavbarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdoptedComponent,
+    LogoutComponent,
+    WishlistComponent
   ],
   // whatever modules we need to import, we'll include those in this array:
   imports: [
@@ -49,7 +59,8 @@ const routes:Routes = [
     // lets us use the ngModel for 2-way binding
     FormsModule,
     // configure the router module to use the routes that we defined above:
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    CookieModule.withOptions()
   ],
   providers: [],
   // root component of the app:
