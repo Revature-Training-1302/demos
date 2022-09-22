@@ -13,6 +13,8 @@ import { AddPetComponent } from './add-pet/add-pet.component';
 import { StyleTestComponent } from './style-test/style-test.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 // set up our routes:
 const routes:Routes = [
@@ -21,7 +23,9 @@ const routes:Routes = [
   {path: 'add', component: AddPetComponent},
   // adding an id parameter here to indicate which pet we want to view here:
   {path: 'pet/:id', component: PetComponent},
-  {path: 'instructions', component: InstructionsComponent}
+  {path: 'instructions', component: InstructionsComponent},
+  {path: "login", component: LoginComponent},
+  {path: "register", component: RegisterComponent}
 ]
 
 @NgModule({
@@ -33,7 +37,9 @@ const routes:Routes = [
     PetsComponent,
     AddPetComponent,
     StyleTestComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   // whatever modules we need to import, we'll include those in this array:
   imports: [

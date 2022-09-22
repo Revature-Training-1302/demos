@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @CrossOrigin(origins = "*")
 @Service
@@ -26,9 +27,14 @@ public class PersonService {
     }
 
     public Person login(Person person) {
-        Person personDB = personRepository.findById(person.getId()).get();
-        if(person.getPassword().equals(personDB.getPassword())) return personDB;
-        else return null;
+        Person personDB;
+        try {
+            personDB = personRepository.findById(person.getId()).get();
+            if(!person.getPassword().equals(personDB.getPassword())) return null;
+        } catch (NoSuchElementException e) {
+            return null;
+        }
+        return personDB;
     }
 
     public Person adopt(Long personId, Long petId) {

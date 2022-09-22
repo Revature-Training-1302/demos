@@ -1,4 +1,4 @@
-<div>
+<div *ngIf = "pet">
     <h1>Pet id {{pet.id}}</h1>
     <label for = "pet-name">Name:</label>
     <input type = "text" id = "pet-name" [(ngModel)] = "pet.name"/>

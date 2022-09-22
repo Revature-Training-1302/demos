@@ -6,3 +6,11 @@ export interface Pet {
     species: String,
     food: String
 }
+
+// store the structure/interface of our Person objects
+export interface Person {
+    id?: Number,
+    name: String,
+    password: String,
+    pets: Pet[]
+}

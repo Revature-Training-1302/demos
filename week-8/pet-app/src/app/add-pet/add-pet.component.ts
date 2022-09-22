@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pet } from '../interfaces';
 import { PetService } from '../services/pet.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-pet',
@@ -12,7 +13,7 @@ export class AddPetComponent implements OnInit {
   pet!:Partial<Pet>;
 
   // dependency injection, put the service in the constructor:
-  constructor(private petService:PetService ) { }
+  constructor(private petService:PetService, private router:Router ) { }
 
   ngOnInit(): void {
     // 2 way binding, making sure that this values are displayed on some form on our web page
@@ -30,10 +31,10 @@ export class AddPetComponent implements OnInit {
       // Once we've changed up some data on our form, we can console log to display those changes:
       this.petService.addPet(this.pet).subscribe(
         pet => {
-          // taking the returned id value and setting it to the pet
-          this.pet.id = pet.id;
           // alert the user what the generated id is:
           alert(`Pet added successfully, generated id is : ${pet.id}`);
+          // this.router.navigate(["/pets"])
+          this.clearPet();
         }
       )
     }
@@ -41,6 +42,13 @@ export class AddPetComponent implements OnInit {
       alert("One or more fields is not valid!");
     }
     // TODO: Send this to database
+  }
+
+  // reset fields to empty:
+  clearPet() {
+    this.pet.name = "";
+    this.pet.species = "";
+    this.pet.food = "";
   }
 
   // custom validate function:
