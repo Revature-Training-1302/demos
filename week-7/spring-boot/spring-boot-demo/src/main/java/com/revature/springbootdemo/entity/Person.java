@@ -11,6 +11,7 @@ import java.util.List;
 
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
 // change the name of the table:
@@ -32,14 +33,8 @@ public class Person {
     @JoinColumn(name = "person_fk", referencedColumnName = "id")
     private List<Pet> adoptedPets;
 
-    public Person() {
-        // initialize our adopted pets to be an empty array list:
-        adoptedPets = new ArrayList<>();
-    }
 
-    public void adopt(Pet pet) {
-        adoptedPets.add(pet);
-    }
+
 
 
 

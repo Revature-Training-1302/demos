@@ -41,7 +41,7 @@ public class PersonService {
         Pet pet = petRepository.findById(petId).get();
         Person person = personRepository.findById(personId).get();
         // update the person object:
-        person.adopt(pet);
+        person.getAdoptedPets().add(pet);
         // persist this change to the database:
         personRepository.save(person);
         return person;
