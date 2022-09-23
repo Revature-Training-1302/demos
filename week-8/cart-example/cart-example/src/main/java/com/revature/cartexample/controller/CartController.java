@@ -32,15 +32,15 @@ public class CartController {
         return cartService.getAll();
     }
 
-    @PatchMapping()
-    public void addToCart() {
-        cartService.addToCart(2l, 1l, 100);
-    }
-
-    @GetMapping("/{id}/products")
-    public Set<Product> getProductsInCart(@PathVariable("id") Long id) {
-        return cartService.getProductsInCart(id);
-
-    }
+//    @PatchMapping()
+//    public void addToCart() {
+//        cartService.addToCart(2l, 1l, 100);
+//    }
+//
+//    @GetMapping("/{id}/products")
+//    public Set<Product> getProductsInCart(@PathVariable("id") Long id) {
+//        return cartService.getProductsInCart(id);
+//
+//    }
 
 }
