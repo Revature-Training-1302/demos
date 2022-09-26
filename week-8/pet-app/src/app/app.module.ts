@@ -22,6 +22,8 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 
 // set up our routes:
 const routes:Routes = [
+  // automatically go to /pets
+  {path: "", redirectTo: "/pets"},
   // when go to /pets, we want to display the PetsComponent
   {path: 'pets', component: PetsComponent},
   {path: 'add', component: AddPetComponent},

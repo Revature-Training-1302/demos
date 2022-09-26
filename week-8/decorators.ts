@@ -9,13 +9,13 @@ function frozen(constructor: Function) {
 
 // function decorator:
 function enumerable(value: boolean) {
-    // change the enumerable property of the function (wheter it will appear in a for...in loop)
+    // change the enumerable property of the function (whether it will appear in a for...in loop)
     return function(target: any, propertyKey:String, descriptor: PropertyDescriptor):any {
         descriptor.enumerable = value;
     };
 }
 
-// class decorator:
+// class decorator (apply to the constructor of the class):
 @frozen
 class Greeter {
     name: string;
@@ -24,7 +24,9 @@ class Greeter {
         this.name = name;
     }
 
-    @enumerable(true)
+    // applying this decorator changes the enumerable property of the method
+    // whether it will be included in a for-in loop:
+    @enumerable(false)
     greet() {
         console.log("Hello, " + this.name);
     }
@@ -36,12 +38,16 @@ for(let x in g) {
     console.log(x);
 }
 
+console.log("\n\n\n")
+
 
 // Property Decorator, listen for changes on the state:
 // In this case, log whenever we change state:
 class Employee { 
     @logProperty
     public name?: string;
+    @logProperty
+    public address?: string;
   }
   
   //property decorator
@@ -78,7 +84,16 @@ class Employee {
 
 
   let e = new Employee();
+  // once we set this name, it will be logged because we used the @Log propert decorator
   e.name = "rory";
+  console.log(e.name);
+
+  e.address = "123 main";
+  console.log(e.address);
+
+  
+
+
 
   class Student{
     private _id: number;
@@ -110,3 +125,5 @@ let s = new Student(1, "New Student");
 
 
 
+// Read more about JS properties here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+// We can use TS decorators to change/manipulate these properties

@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PipeExampleComponent } from './pipe-example/pipe-example.component';
 import { CustomPipePipe } from './custom-pipe.pipe';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
+import { SubjectExampleComponent } from './subject-example/subject-example.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PipeExampleComponent,
-    CustomPipePipe
+    CustomPipePipe,
+    ChildComponent,
+    ParentComponent,
+    SubjectExampleComponent
   ],
   imports: [
     BrowserModule,
