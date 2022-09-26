@@ -1,0 +1,23 @@
+
+<div>
+    <label for = "name">Name:</label>
+    <input type = "text" id= "name" [(ngModel)] = "dinosaur.name"/>
+    <br />
+    <label for = "habitat">Habitat</label>
+    <input type = "text" id = "habitat" [(ngModel)] = "dinosaur.habitat"/>
+    <br />
+    <label for = "diet">Diet</label>
+    <input type = "text" id = "diet" [(ngModel)] = "dinosaur.diet"/>
+    <br />
+    <label for = "legs">Legs</label>
+    <input type = "number" id = "legs" [(ngModel)] = "dinosaur.legs"/>
+    <br />
+    <button (click) = "print()">Click Me</button>
+</div>
+
+
+<h1>Dino values (1-way binding)</h1>
+<h2>{{dinosaur.name}}</h2>
+<h2>{{dinosaur.habitat}}</h2>
+<h2>{{dinosaur.diet}}</h2>
+<h2>{{dinosaur.legs}}</h2>

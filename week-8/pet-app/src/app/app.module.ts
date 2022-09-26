@@ -19,11 +19,13 @@ import { AdoptedComponent } from './adopted/adopted.component';
 import { CookieModule } from 'ngx-cookie';
 import { LogoutComponent } from './logout/logout.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { AuthGuard } from './auth.guard';
 
 // set up our routes:
 const routes:Routes = [
-  // automatically go to /pets
-  {path: "", redirectTo: "/pets"},
+  // automatically go to /pets if we navigate to "/"
+  // we want pathMatch to be full when redirecting from empty locations
+  {path: "", redirectTo: "/pets", pathMatch: "full"},
   // when go to /pets, we want to display the PetsComponent
   {path: 'pets', component: PetsComponent},
   {path: 'add', component: AddPetComponent},
@@ -32,7 +34,8 @@ const routes:Routes = [
   {path: 'instructions', component: InstructionsComponent},
   {path: "login", component: LoginComponent},
   {path: "register", component: RegisterComponent},
-  {path: "adopted", component: AdoptedComponent},
+  // before we activate this route, first use our guard to check if we are logged in:
+  {path: "adopted", component: AdoptedComponent, canActivate:[AuthGuard]},
   {path: "logout", component: LogoutComponent},
   {path: "wishlist", component: WishlistComponent}
 ]
@@ -62,7 +65,7 @@ const routes:Routes = [
     FormsModule,
     // configure the router module to use the routes that we defined above:
     RouterModule.forRoot(routes),
-    CookieModule.withOptions()
+    CookieModule
   ],
   providers: [],
   // root component of the app:

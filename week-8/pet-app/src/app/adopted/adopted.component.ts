@@ -21,18 +21,18 @@ export class AdoptedComponent implements OnInit {
 
   ngOnInit(): void {
     let userId = Number(this.cookieService.get("userId"));
-    console.log(userId);
-    if (isNaN(userId)) {
-      alert("You must be logged in to view adopted pets");
-      this.router.navigate(["/pets"]);
-    }
-    else {
-      this.personService.getAdopted(userId).subscribe(
-        returnVal => {
-          this.adopted = returnVal;
-        }
-      )
-    }
+    // We can remove the logic of checking for id because that will be taken care of by the router guard:
+    // console.log(userId);
+    // if (isNaN(userId)) {
+    //   alert("You must be logged in to view adopted pets");
+    //   this.router.navigate(["/pets"]);
+    // }
+
+    this.personService.getAdopted(userId).subscribe(
+      returnVal => {
+        this.adopted = returnVal;
+      }
+    )
    
   }
 

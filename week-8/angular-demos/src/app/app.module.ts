@@ -8,6 +8,8 @@ import { CustomPipePipe } from './custom-pipe.pipe';
 import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
 import { SubjectExampleComponent } from './subject-example/subject-example.component';
+import { DinosComponent } from './dinos/dinos.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { SubjectExampleComponent } from './subject-example/subject-example.compo
     CustomPipePipe,
     ChildComponent,
     ParentComponent,
-    SubjectExampleComponent
+    SubjectExampleComponent,
+    DinosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

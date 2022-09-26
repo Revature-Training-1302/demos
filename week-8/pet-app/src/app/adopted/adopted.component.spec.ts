@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { modules, services } from '../imports';
+import { CookieService } from 'ngx-cookie';
 
 import { AdoptedComponent } from './adopted.component';
 
@@ -8,7 +10,11 @@ describe('AdoptedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdoptedComponent ]
+      declarations: [ AdoptedComponent ],
+      imports: [...modules, ...services],
+      providers: [
+        {provide: CookieService, useClass: CookieService }
+      ]
     })
     .compileComponents();
 
@@ -18,6 +24,8 @@ describe('AdoptedComponent', () => {
   });
 
   it('should create', () => {
+    // expecting the component to be created
+    // if it was null/undefined/falsey then this test would fail
     expect(component).toBeTruthy();
   });
 });

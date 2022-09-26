@@ -11,6 +11,7 @@ export class SubjectExampleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.async_subject();
   }
 
   subject_ex() {
@@ -39,19 +40,21 @@ export class SubjectExampleComponent implements OnInit {
   }
 
   behavior_subject() {
+    // note that we are declaring a Behavior Subject instead of a regular Subject
     // can declare a starting value 0
     const subject = new BehaviorSubject(0);
    //First Observer
    subject.subscribe({
       next: (data) => console.log('First observer prints '+ data)
    });
-   subject.next(1111);
-   subject.next(2222);
+   subject.next(1);
+   // temporarily store this value, so it will be consumed by the next observer:
+   subject.next(2);
    //Second Observer, will have access to 2222 because it was stored
    subject.subscribe({
       next: (data) => console.log('Second observer prints '+ data)
    });
-   subject.next(3333);
+   subject.next(3);
   }
 
   replay_subject() {
@@ -63,15 +66,15 @@ export class SubjectExampleComponent implements OnInit {
          return console.log('First observer prints ' + data);
       }
    });
-   subject.next(1111);
-   subject.next(2222);
-   //Second Observer
+   subject.next(1);
+   subject.next(2);
+   //Second Observer, should have access to 1 and 2 because we're using a ReplaySubject with 2
    subject.subscribe({
       next: (data) => {
          return console.log('Second observer prints ' + data);
       }
    });
-   subject.next(3333);
+   subject.next(3);
   }
 
   async_subject() {
@@ -81,7 +84,9 @@ export class SubjectExampleComponent implements OnInit {
       next: (data) => console.log('First observer prints '+ data)
    });
    subject.next(1);
+  //  subject.complete();
    subject.next(2);
+  //  subject.complete();
    //Second Observer
    subject.subscribe({
       next: (data) => console.log('Second observer prints '+ data)

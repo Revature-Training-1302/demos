@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { modules, services } from '../imports';
 
 import { AddPetComponent } from './add-pet.component';
 
@@ -8,7 +9,8 @@ describe('AddPetComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddPetComponent ]
+      declarations: [ AddPetComponent ],
+      imports: [...modules, ...services]
     })
     .compileComponents();
 

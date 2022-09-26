@@ -1,4 +1,7 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CookieModule, CookieService } from 'ngx-cookie';
+import { modules, services } from '../imports';
 
 import { WishlistComponent } from './wishlist.component';
 
@@ -8,7 +11,11 @@ describe('WishlistComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WishlistComponent ]
+      imports: [...modules, ...services],
+      declarations: [ WishlistComponent ],
+      providers: [
+        {provide: CookieService, useClass: CookieService }
+      ]
     })
     .compileComponents();
 
