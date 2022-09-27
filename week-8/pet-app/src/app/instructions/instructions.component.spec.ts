@@ -36,7 +36,7 @@ describe('InstructionsComponent', () => {
     expect(compiled.querySelector('ol')?.textContent).toContain('ng new pet-app');
     expect(compiled.querySelector('ol')?.textContent).toContain('ng generate component instructions');
     expect(compiled.querySelector('ol')?.textContent).toContain('npm install ngx-cookie');
-    expect(compiled.querySelector('ol')?.textContent).toContain('ng  generate component register ');
+    expect(compiled.querySelector('ol')?.textContent).toContain('ng generate component register');
 
 
   }));

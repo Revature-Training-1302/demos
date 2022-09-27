@@ -12,6 +12,6 @@
     <label for = "pet-food">Food:</label>
     <input name = "food" required type = "text" id = "pet-food" [(ngModel)]="pet.food"/>
 
-    <input [ngStyle] = "{'display': validatePet() ? 'inline' : 'none' }"   type = "submit" value = "Add Pet"/>
+    <input id = "submitButton" [ngStyle] = "{'display': validatePet() ? 'inline' : 'none' }"   type = "submit" value = "Add Pet"/>
 
 </form>

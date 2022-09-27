@@ -13,9 +13,6 @@ describe('RegisterComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ RegisterComponent ],
       imports: [...modules, ...services],
-      providers: [
-        {provide: CookieService, useClass: CookieService }
-      ]
     })
     .compileComponents();
 

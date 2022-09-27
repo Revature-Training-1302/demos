@@ -27,6 +27,7 @@ export class PetComponent implements OnInit {
 
   // store the id of the logged in user:
   userId!:Number;
+  petId!:Number;
 
   // The only thing we want to use our constructor for is dependency injection:
   constructor(private petService: PetService,
@@ -46,9 +47,9 @@ export class PetComponent implements OnInit {
     // We can set up any variables or fields here:
     // because the pet is a field of this class, we use the "this" keyword
     // parse the id from the route and convert it to a number:
-    let petId:Number = Number(this.route.snapshot.paramMap.get("id"));
+    this.petId = Number(this.route.snapshot.paramMap.get("id"));
     // returns an observable, so we have to subscribe to the return value
-    this.petService.getById(petId).subscribe (
+    this.petService.getById(this.petId).subscribe (
       // take in an arrow function with the returned value as the parameter
       returnPet => {
         // update our pet field with the returned value from the service

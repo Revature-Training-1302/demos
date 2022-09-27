@@ -12,9 +12,6 @@ describe('AdoptedComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ AdoptedComponent ],
       imports: [...modules, ...services],
-      providers: [
-        {provide: CookieService, useClass: CookieService }
-      ]
     })
     .compileComponents();
 

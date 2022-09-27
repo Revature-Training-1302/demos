@@ -23,7 +23,7 @@ export class DinosComponent implements OnInit {
       name: "T-Rex",
       habitat: "valley",
       diet: "carnivore",
-      legs: 2
+      legs: 2,
     }
   }
 
