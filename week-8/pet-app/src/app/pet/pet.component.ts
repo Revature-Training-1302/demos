@@ -20,14 +20,14 @@ export class PetComponent implements OnInit {
   // in this case, pet is an object, so we need to give it an interface:
   pet!: Pet;
 
-  img_url:String = "https://www.aquariumofpacific.org/images/exhibits/Magnificent_Tree_Frog_900.jpg";
+  img_url:string = "https://www.aquariumofpacific.org/images/exhibits/Magnificent_Tree_Frog_900.jpg";
 
   // this boolean keeps track of whether we want to show the "extra" content on our page
   show_extra_content:boolean = false;
 
   // store the id of the logged in user:
-  userId!:Number;
-  petId!:Number;
+  userId!:number;
+  petId!:number;
 
   // The only thing we want to use our constructor for is dependency injection:
   constructor(private petService: PetService,

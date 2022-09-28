@@ -20,6 +20,9 @@ import { CookieModule } from 'ngx-cookie';
 import { LogoutComponent } from './logout/logout.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { AuthGuard } from './auth.guard';
+import { PersonService } from './services/person.service';
+import { PetService } from './services/pet.service';
+import { SessionService } from './services/session.service';
 
 // set up our routes:
 const routes:Routes = [
@@ -65,9 +68,12 @@ const routes:Routes = [
     FormsModule,
     // configure the router module to use the routes that we defined above:
     RouterModule.forRoot(routes),
-    CookieModule
+    CookieModule.withOptions()
   ],
-  providers: [],
+  providers: [
+    // list the services that we made (IMPORTANT FOR S3 HOSTING)
+    PersonService, PetService, SessionService
+  ],
   // root component of the app:
   bootstrap: [AppComponent]
 })
