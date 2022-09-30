@@ -22,6 +22,7 @@ export class PetService {
 
   // simulating an http response by manually constucting an observable:
   getAllPets(): Observable<Pet[]> {
+    console.log(url);
     // dummy data, will be replaced with http request:
     return this.http.get<Pet[]>(`${url}/pets`);
   }
