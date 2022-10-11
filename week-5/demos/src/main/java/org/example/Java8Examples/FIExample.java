@@ -6,6 +6,13 @@ interface Raise {
     int calculate(int x);
 }
 
+@FunctionalInterface
+interface Greeter {
+    // one abstract method:
+    // takes in a string and returns nothing
+    void greet(String x);
+}
+
 
 public class FIExample {
 
@@ -28,6 +35,25 @@ public class FIExample {
         // passing these lambda expressions into the method
         applyFuncAndPrint(square, 5);
         applyFuncAndPrint(cube, 7);
+
+
+        // Use lambda expressions to give different implementations of the Greet interface:
+        Greeter englishGreeter = (String name) -> {
+            System.out.println("Hello, " + name);
+        };
+
+        Greeter frenchGreeter = (String name) -> {
+            System.out.println("Bonjour, " + name);
+        };
+
+        Greeter pirateGreeter = (String name) -> {
+            System.out.println("Ahoy, " + name + "!");
+        };
+
+        // Call the greet method in the greeters that we created:
+        englishGreeter.greet("Max");
+        frenchGreeter.greet("Paul");
+        pirateGreeter.greet("Blackbeard");
     }
 
     // apply the given function to the value and then print it out:
@@ -46,4 +72,7 @@ public class FIExample {
     public static int cube(int x) {
         return x * x * x;
     }
+
+    // For Practice, make your own Functional Interface and give it a few different implementations
+    // More Java 8 Features: https://www.javatpoint.com/java-8-features
 }
