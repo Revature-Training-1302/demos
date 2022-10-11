@@ -16,11 +16,14 @@ public class PetService {
     @Autowired
     PetRepository petRepository;
 
+    public PetService(PetRepository petRepository) {
+        this.petRepository = petRepository;
+    }
+
     public Pet insert(Pet pet) {
         // insert our pet object into database:
-        petRepository.save(pet);
+        return petRepository.save(pet);
         // Because we're generating the id of the pet, we want to return it:
-        return pet;
     }
 
     public Pet getById(Long id) {
