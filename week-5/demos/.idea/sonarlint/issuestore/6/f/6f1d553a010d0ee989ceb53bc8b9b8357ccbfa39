@@ -1,0 +1,31 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(±õÒ¿
+Q	java:S125	"<This block of commented-out lines of code should be removed.(½ñà’
+N
+java:S1611"3Remove the parentheses around the "value" parameter(¼ÀŸûûÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(‚é€Şûÿÿÿÿ
+w
+java:S4276"\Refactor this code to use the more specialised Functional Interface 'ObjIntConsumer<String>'(á´Æáøÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(‚é€Şûÿÿÿÿ
+m
+java:S4276'"RRefactor this code to use the more specialised Functional Interface 'IntPredicate'(áÌŒúÿÿÿÿ
+N
+java:S1611'"3Remove the parentheses around the "value" parameter(áÌŒúÿÿÿÿ
+N	java:S106,"9Replace this use of System.out or System.err by a logger.(ŠÂŸ¨
+S	java:S106-"9Replace this use of System.out or System.err by a logger.(ÛšÕşÿÿÿÿ
+N	java:S106."9Replace this use of System.out or System.err by a logger.(†á£ç
+N	java:S106/"9Replace this use of System.out or System.err by a logger.(ÂÕÌ¿
+N	java:S1060"9Replace this use of System.out or System.err by a logger.(û…Â×
+v
+java:S42766"[Refactor this code to use the more specialised Functional Interface 'UnaryOperator<String>'(®ßŠ†ÿÿÿÿÿ
+M
+java:S16116"2Remove the parentheses around the "name" parameter(®ßŠ†ÿÿÿÿÿ
+w
+java:S42769"\Refactor this code to use the more specialised Functional Interface 'BinaryOperator<String>'(åğş–ùÿÿÿÿ
+S	java:S106;"9Replace this use of System.out or System.err by a logger.(®Ê…”ûÿÿÿÿ
+S	java:S106<"9Replace this use of System.out or System.err by a logger.(øûØÕÿÿÿÿÿ
+l
+java:S4276A"QRefactor this code to use the more specialised Functional Interface 'IntSupplier'(°››–úÿÿÿÿ
+9
+java:S2119B"Save and re-use this "Random".(¼Ú’¸şÿÿÿÿ
+N	java:S106I"9Replace this use of System.out or System.err by a logger.(×–€£

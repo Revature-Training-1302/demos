@@ -1,0 +1,15 @@
+
+e
+java:S1192"JDefine a constant instead of duplicating this literal "Removing " 3 times.(§êúÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(úÔ°ìÿÿÿÿÿ
+e
+java:S1149"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(‰ëª/
+S	java:S106"9Replace this use of System.out or System.err by a logger.(§êúÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(§êúÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¸õ‹÷ûÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ÉàÌ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(‡Ş¬´
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Œ¶é†ÿÿÿÿÿ
+M	java:S106"9Replace this use of System.out or System.err by a logger.(âˆË
+S	java:S106"9Replace this use of System.out or System.err by a logger.(§êúÿÿÿÿ
+S	java:S106 "9Replace this use of System.out or System.err by a logger.(’Üõıÿÿÿÿ

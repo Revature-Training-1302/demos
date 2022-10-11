@@ -1,0 +1,50 @@
+
+`
+java:S1192B"JDefine a constant instead of duplicating this literal "Slytherin" 4 times.(»Û°ä
+a
+java:S1192?"KDefine a constant instead of duplicating this literal "Hufflepuff" 4 times.(¶’‹†
+_
+java:S1192<"JDefine a constant instead of duplicating this literal "Ravenclaw" 3 times.(Œñ„
+a
+java:S11929"KDefine a constant instead of duplicating this literal "Gryffindor" 4 times.(ﬂ˜™≠
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(«É©æ
+m
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(√›‚’˘ˇˇˇˇ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(îúÑú
+h
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(„é˝ç
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¥ÃÎÀ
+N	java:S106 "9Replace this use of System.out or System.err by a logger.(ﬁ“©ÿ
+m
+java:S6204#"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(Èƒ÷øˇˇˇˇˇ
+S	java:S106$"9Replace this use of System.out or System.err by a logger.(¡ñ∑’˝ˇˇˇˇ
+S	java:S106'"9Replace this use of System.out or System.err by a logger.(≈’±•¯ˇˇˇˇ
+S	java:S106+"9Replace this use of System.out or System.err by a logger.(¨“†œˇˇˇˇˇ
+S	java:S1060"9Replace this use of System.out or System.err by a logger.(≥á÷â˙ˇˇˇˇ
+S	java:S1061"9Replace this use of System.out or System.err by a logger.(üÛ®„˘ˇˇˇˇ
+N	java:S1065"9Replace this use of System.out or System.err by a logger.(Ÿ·˝Ö
+G
+java:S1602S",Remove useless curly braces around statement(¥ü„Ü¯ˇˇˇˇ
+[
+java:S1612S"@Replace this lambda with method reference 'System.out::println'.(¥ü„Ü¯ˇˇˇˇ
+S	java:S106T"9Replace this use of System.out or System.err by a logger.(Æ˝·Î˚ˇˇˇˇ
+h
+java:S6204X"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(êÒ∏Ÿ
+N	java:S106Y"9Replace this use of System.out or System.err by a logger.(õ»√ 
+S	java:S106["9Replace this use of System.out or System.err by a logger.(™”º·˛ˇˇˇˇ
+m
+java:S6204_"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ﬂÅŒ›˘ˇˇˇˇ
+S	java:S106`"9Replace this use of System.out or System.err by a logger.(≥öæ˘ˇˇˇˇ
+B
+java:S1602c",Remove useless curly braces around statement(ÚØ›
+V
+java:S1612c"@Replace this lambda with method reference 'System.out::println'.(ÚØ›
+S	java:S106d"9Replace this use of System.out or System.err by a logger.(Æ˝·Î˚ˇˇˇˇ
+S	java:S106g"9Replace this use of System.out or System.err by a logger.(™”º·˛ˇˇˇˇ
+B
+java:S1602i",Remove useless curly braces around statement(á‰¢˛
+V
+java:S1612i"@Replace this lambda with method reference 'System.out::println'.(á‰¢˛
+S	java:S106j"9Replace this use of System.out or System.err by a logger.(µœÖË˘ˇˇˇˇ
+S	java:S106s"9Replace this use of System.out or System.err by a logger.(Øƒ∑§¸ˇˇˇˇ
+Z	java:S106w"9Replace this use of System.out or System.err by a logger.(›ﬁ ⁄¯ˇˇˇˇ8‡Ó ºº0

@@ -1,0 +1,16 @@
+
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œîÏı
+X
+java:S2184*"BCast one of the operands of this division operation to a "double".(Ã¦¯Ô
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(şñô“úÿÿÿÿ
+M	java:S106"9Replace this use of System.out or System.err by a logger.(ƒì
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¥ª÷è
+S	java:S106"9Replace this use of System.out or System.err by a logger.(õŞø¯ûÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¬§œ¥
+S	java:S106"9Replace this use of System.out or System.err by a logger.(±¯Ëøÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(â°šä
+S	java:S106$"9Replace this use of System.out or System.err by a logger.(ËÊ¸ùÿÿÿÿ
+Q	java:S125("<This block of commented-out lines of code should be removed.(¡ç
+<
+java:S2185*"&Remove this silly call to "Math.floor"(Ã¦¯Ô
+S	java:S1061"9Replace this use of System.out or System.err by a logger.(ËÊ¸ùÿÿÿÿ
