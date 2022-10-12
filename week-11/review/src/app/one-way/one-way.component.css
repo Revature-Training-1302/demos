@@ -1,7 +1,9 @@
-.show {
-    display: block;
+.show_class {
+    /* display: block; */
+    color: green;
 }
 
-.hide {
-    display: none;
+.hide_class {
+    /* display: none; */
+    color: blue;
 }

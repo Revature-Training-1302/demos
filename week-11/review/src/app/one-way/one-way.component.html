@@ -1,31 +1,37 @@
-<h2>One Way Data Binding</h2>
+<h1>One Way Data Binding</h1>
 
 <div>
-    <h3>String interpolation</h3>
-    <h3>With string interpolation, we use double-curly syntax. Just make sure the value we put in the curly braces is
-        valid typescript code. All variables must also be present in the corresponding TypeScript file.</h3>
-    {{name}}
+    <h2>Interpolation</h2>
+    <h2>With string interpolation, we use the double curly syntax. We can put any TypeScript code within the braces and it will be evaluated.
+        If we want to use variables, they have to be present in the corresponding TypeScript file.
+    </h2>
+    {{2+2}}
+    <!-- 2+2 -->
+    <p>My name is {{name}}</p>
 </div>
 
 <div>
-    <h3>Event Binding</h3>
-    <h3>With event binding, we have an event (ex: click) and some sort of code to call when that event is triggered (ex:
-        calling our alert function) </h3>
-    <button (click)="alert_message()">Click for Alert</button>
+    <h2>Event Binding</h2>
+    <h3>With event binding, we can have an event (ex: click) and bind it to some function in our TS file. Ex: If we have press a button, an alert pops up.</h3>
+    <input [(ngModel)] = "value"/>
+    <button (click) = "alert_hello('hello updated')">Push for alert</button>
 </div>
 
 <div>
-    <h3>Property Binding</h3>
-    <h3>With property binding, we assign a property of one of our HTML elements using data from the TypeScript file</h3>
-    <h3>Just like with String interpolation, we have to make sure that the data/variable we're binding exists in the TypeScript file</h3>
-    <img [src] = "img"/>
+    <h2>Property Binding</h2>
+    <h3>With property binding, we assign a property of one of our HTML elements using data from te TypeScript file</h3>
+    <h3>Just like interpolation, we have to make sure that the variable actually exists in the TS file if we want to use it.</h3>
+    <img width = '300px' [src] = "img"/>
 </div>
 
 <div>
-    <h3>Here is an example involving all three:</h3>
-    <button (click) = "toggle_show()">Toggle Show</button>
-    <div [class] = "show ? 'show' : 'hide' ">
-        <p>This will be hidden if show is set to false!</p>
+    <button (click) = "toggle_show()">Toggle</button>
+    {{show}}
+    <div [class] = "show ? 'show_class' :  'hide_class' ">
+        <p>This will be hidden if show is set to false</p>
     </div>
-   <p>Show (T/F): {{show}}</p>
+</div>
+
+<div *ngIf = "show">
+    Using Ng If to hide stuff
 </div>
