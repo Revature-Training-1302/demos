@@ -1,0 +1,31 @@
+<h2>One Way Data Binding</h2>
+
+<div>
+    <h3>String interpolation</h3>
+    <h3>With string interpolation, we use double-curly syntax. Just make sure the value we put in the curly braces is
+        valid typescript code. All variables must also be present in the corresponding TypeScript file.</h3>
+    {{name}}
+</div>
+
+<div>
+    <h3>Event Binding</h3>
+    <h3>With event binding, we have an event (ex: click) and some sort of code to call when that event is triggered (ex:
+        calling our alert function) </h3>
+    <button (click)="alert_message()">Click for Alert</button>
+</div>
+
+<div>
+    <h3>Property Binding</h3>
+    <h3>With property binding, we assign a property of one of our HTML elements using data from the TypeScript file</h3>
+    <h3>Just like with String interpolation, we have to make sure that the data/variable we're binding exists in the TypeScript file</h3>
+    <img [src] = "img"/>
+</div>
+
+<div>
+    <h3>Here is an example involving all three:</h3>
+    <button (click) = "toggle_show()">Toggle Show</button>
+    <div [class] = "show ? 'show' : 'hide' ">
+        <p>This will be hidden if show is set to false!</p>
+    </div>
+   <p>Show (T/F): {{show}}</p>
+</div>
