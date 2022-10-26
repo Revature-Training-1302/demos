@@ -6,7 +6,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 // Change this to change which properties file we get our database connection from:
-@PropertySource("classpath:dev.properties")
+@PropertySource("classpath:test.properties")
 public class SpringBootDemoApplication {
 
 	public static void main(String[] args) {

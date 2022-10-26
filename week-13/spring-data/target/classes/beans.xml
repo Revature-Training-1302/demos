@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		 ">
+
+	<!-- Scan the com.revature package for components that will be registered as beans -->
+	<context:component-scan base-package="com.revature"/>
+	<!-- Set up our project so we can use annotations -->
+	<context:annotation-config></context:annotation-config>
+
+	<!-- Configure out data source (like how we set up our application.properties in Spring Boot app) -->
+	<bean id = "dataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver"/>
+		<property name="url" value = "jdbc:postgresql://localhost:5432/costumes"/>
+		<property name="username" value = "postgres"/>
+		<property name="password" value = "root"/>
+	</bean>
+
+	<bean id = "entityManagerFactory"
+		  class = "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+		  p:packagesToScan="com.revature.entity"
+		  p:dataSource-ref="dataSource">
+		<property name="jpaVendorAdapter">
+			<bean class = "org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="generateDdl" value = "true"/>
+				<property name="showSql" value = "true"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id = "transactionManager" class = "org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref = "entityManagerFactory"/>
+	</bean>
+
+	<!-- lets us use the @Transactional annotation to manage transactions in our program -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+</beans>
