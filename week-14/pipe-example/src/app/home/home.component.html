@@ -1,0 +1,56 @@
+<h2><a href = "https://angular.io/api/common/DatePipe" target = "blank">Date</a></h2>
+<ul>
+    <li>No pipes: {{today}}</li>
+    <li>Formatted using pipe: {{today | date}}</li>
+    <li>{{today | date:'fullTime'}}</li>
+    <li>{{today | date:'full'}}</li>
+    <li>{{today | date:'w'}}</li>
+</ul>
+
+<h2><a href = "https://angular.io/api/common/UpperCasePipe">Case</a></h2>
+<ul>
+    <li>
+        {{name | uppercase}}
+    </li>
+    
+    <li>
+        {{name | lowercase}}
+    </li>
+    
+    <li>
+        {{name | titlecase}}
+    </li>
+</ul>
+
+<h2><a href = "https://angular.io/api/common/CurrencyPipe">Currency</a></h2>
+<ul>
+    <li>{{amount| currency}} </li>
+    <li>{{amount| currency:'EUR'}} </li>
+    <li>{{amount| currency:'GYD'}} </li>
+    <li>{{amount| currency:'RUB'}} </li>
+</ul>
+
+<h2><a href = "https://angular.io/api/common/DecimalPipe">Decimal</a></h2>
+<ul>
+    <li>{{amount | number:'1.2-6'}}</li>
+    <li>{{1.0 | number:'1.2-6'}}</li>
+</ul>
+
+<h2>
+    <a href = "https://angular.io/api/common/PercentPipe">Percent</a>
+</h2>
+<ul>
+    <li>{{percentage | percent:'.2-2'}}</li>
+</ul>
+
+<h2>Custom Negate Pipe</h2>
+<ul>
+    <li>{{amount | negate }}</li>
+</ul>
+
+<h2>Custom String Pipe</h2>
+<ul>
+    <li>{{name | stringManip }}</li>
+    <li>{{name | stringManip:'reverse' }}</li>
+    <li>{{name | stringManip:'encrypt' }}</li>
+</ul>
