@@ -1,0 +1,8 @@
+<p [ngClass]="isSpecial ? 'special' : '' ">This is special</p>
+<button (click) = "change()">Click Me</button>
+
+<img [ngStyle] = "imgStyle" src = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/beautiful-fall-pictures-1660843096.jpeg" alt = "Fall Image"/>
+ 
+<input [(ngModel)] ="name"/>
+
+{{name}}

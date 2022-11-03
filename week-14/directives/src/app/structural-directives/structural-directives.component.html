@@ -1,0 +1,20 @@
+<p>structural-directives change the dom and how different elements are rendered/displayed</p>
+
+<p>We can use ngIf to check if a condition is true and use that to determine whether or not we render the element</p>
+<p>Only try to render person.name is person is valid/truthy</p>
+<div *ngIf = "person">
+    <h1>{{person.name}}</h1>
+</div>
+
+<p>We use ngFor to render many different objects in an array</p>
+<ul>
+    <li *ngFor="let food of foods">{{food}}</li>
+</ul>
+
+<p>ng switch render a different element depending on switch case</p>
+
+<div [ngSwitch]="status">
+    <p *ngSwitchCase="'yes'">I like pizza!</p>
+    <p *ngSwitchCase="'no'">I don't like pizza!</p>
+    <p *ngSwitchDefault>I'm not sure...</p>
+</div>
